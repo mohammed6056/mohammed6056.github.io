@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
     body {
       font-family: 'Inter', sans-serif;
       color: #1a1a2e;
@@ -131,86 +131,71 @@
     }
     .ms-section-title span { color: #4caf50; }
 
-    /* ===== ABOUT ===== *//* ===== ABOUT SECTION ===== */
-.ms-about {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
-}
+    /* ===== ABOUT ===== */
+    .ms-about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
 
-/* ===== TEXT ===== */
-.ms-about-text h2 {
-  font-size: clamp(28px, 3.5vw, 38px);
-  font-weight: 800;
-  color: #4caf50;
-  margin-bottom: 24px;
-}
+    .ms-about-text h2 {
+      font-size: clamp(28px, 3.5vw, 38px);
+      font-weight: 800;
+      color: #4caf50;
+      margin-bottom: 24px;
+    }
 
-.ms-about-text p {
-  font-size: 16px;
-  color: #555;
-  line-height: 1.8;
-  margin-bottom: 16px;
-}
+    .ms-about-text p {
+      font-size: 16px;
+      color: #555;
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
 
-.ms-about-text strong {
-  color: #1a1a2e;
-}
+    .ms-about-text strong {
+      color: #1a1a2e;
+    }
 
-/* ===== IMAGE ===== */
-.ms-about-img {
-  position: relative;
-  width: 100%;
-  max-width: 520px;
-  height: 420px;
-  margin-left: auto;
-}
+    /* ===== IMAGE - CENTERED ===== */
+    .ms-about-img {
+      position: relative;
+      width: 100%;
+      max-width: 520px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-.ms-about-img-inner {
-  position: relative;
-  width: 100%;
-  height: auto;
-  border-radius: 20px;
-  overflow: hidden;
-  background: #f3f4f6;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-}
+    .ms-about-img-inner {
+      position: relative;
+      width: 100%;
+      height: auto;
+      border-radius: 20px;
+      overflow: hidden;
+      background: #f3f4f6;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    }
 
-.ms-about-img-inner img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
+    .ms-about-img-inner img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      display: block;
+    }
 
-/* Subtle overlay for depth */
-.ms-about-img-inner::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(0, 0, 0, 0.04),
-    rgba(0, 0, 0, 0.15)
-  );
-  pointer-events: none;
-}
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 768px) {
-  .ms-about {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .ms-about-img {
-    max-width: 100%;
-    height: 360px;
-    margin: 0 auto;
-  }
-}
-
+    .ms-about-img-inner::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        135deg,
+        rgba(0, 0, 0, 0.04),
+        rgba(0, 0, 0, 0.15)
+      );
+      pointer-events: none;
+    }
 
     /* ===== SERVICES ===== */
     .ms-services-header { text-align: center; margin-bottom: 60px; }
@@ -264,129 +249,111 @@
     .ms-tool-card li::before { content: '▸'; color: #4caf50; font-weight: 700; }
 
     /* ===== WORK ===== */
-/* ===== WORK SECTION ===== */
-.ms-work-header {
-  text-align: center;
-  margin-bottom: 24px;
-}
+    .ms-work-header {
+      text-align: center;
+      margin-bottom: 24px;
+    }
 
-.ms-work-disclaimer {
-  text-align: center;
-  background: #fafbfc;
-  border-radius: 12px;
-  padding: 18px 26px;
-  margin-bottom: 48px;
-  color: #666;
-  font-size: 15px;
-  line-height: 1.6;
-}
+    .ms-work-disclaimer {
+      text-align: center;
+      background: #fafbfc;
+      border-radius: 12px;
+      padding: 18px 26px;
+      margin-bottom: 48px;
+      color: #666;
+      font-size: 15px;
+      line-height: 1.6;
+    }
 
-/* ===== GRID ===== */
-.ms-work-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 28px;
-}
+    .ms-work-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 28px;
+    }
 
-/* ===== CARD ===== */
-.ms-work-card {
-  background: #fafbfc;
-  border: 1px solid #f0f0f0;
-  border-radius: 16px;
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+    .ms-work-card {
+      background: #fafbfc;
+      border: 1px solid #f0f0f0;
+      border-radius: 16px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-.ms-work-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 14px 42px rgba(0, 0, 0, 0.08);
-}
+    .ms-work-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 42px rgba(0, 0, 0, 0.08);
+    }
 
-/* ===== IMAGE THUMB ===== */
-.ms-work-thumb {
-  position: relative;
-  width: 100%;
-  height: 180px;
-  overflow: hidden;
-  background: #f2f3f5;
-}
+    .ms-work-thumb {
+      position: relative;
+      width: 100%;
+      height: 180px;
+      overflow: hidden;
+      background: #f2f3f5;
+    }
 
-.ms-work-thumb img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.45s ease;
-}
+    .ms-work-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.45s ease;
+    }
 
-.ms-work-card:hover .ms-work-thumb img {
-  transform: scale(1.06);
-}
+    .ms-work-card:hover .ms-work-thumb img {
+      transform: scale(1.06);
+    }
 
-/* Subtle overlay for readability */
-.ms-work-thumb::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.05),
-    rgba(0, 0, 0, 0.35)
-  );
-  pointer-events: none;
-}
+    .ms-work-thumb::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.05),
+        rgba(0, 0, 0, 0.35)
+      );
+      pointer-events: none;
+    }
 
-/* ===== INFO ===== */
-.ms-work-info {
-  padding: 24px;
-}
+    .ms-work-info {
+      padding: 24px;
+    }
 
-.ms-work-info h3 {
-  font-size: 20px;
-  font-weight: 700;
-  color: #1a1a2e;
-  margin-bottom: 6px;
-}
+    .ms-work-info h3 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #1a1a2e;
+      margin-bottom: 6px;
+    }
 
-.ms-work-tag {
-  display: inline-block;
-  font-size: 13px;
-  font-weight: 600;
-  color: #4caf50;
-  margin-bottom: 12px;
-}
+    .ms-work-tag {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 600;
+      color: #4caf50;
+      margin-bottom: 12px;
+    }
 
-.ms-work-info p {
-  font-size: 14px;
-  color: #666;
-  line-height: 1.6;
-  margin-bottom: 16px;
-}
+    .ms-work-info p {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
 
-/* ===== LINK ===== */
-.ms-work-link {
-  font-size: 14px;
-  font-weight: 600;
-  color: #4caf50;
-  text-decoration: none;
-  cursor: pointer;
-  transition: color 0.25s ease;
-}
+    .ms-work-link {
+      font-size: 14px;
+      font-weight: 600;
+      color: #4caf50;
+      text-decoration: none;
+      cursor: pointer;
+      transition: color 0.25s ease;
+    }
 
-.ms-work-link:hover {
-  color: #388e3c;
-}
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 768px) {
-  .ms-work-thumb {
-    height: 160px;
-  }
-
-  .ms-work-info {
-    padding: 20px;
-  }
-}
+    .ms-work-link:hover {
+      color: #388e3c;
+    }
 
     /* ===== CONTACT ===== */
     .ms-contact { text-align: center; }
@@ -447,13 +414,15 @@
       .ms-hero { padding: 100px 20px 60px; }
       .ms-section { padding: 60px 20px; }
       .ms-about { grid-template-columns: 1fr; gap: 40px; }
-      .ms-about-img { order: -1; }
+      .ms-about-img { order: -1; max-width: 100%; }
       .ms-services-grid { grid-template-columns: 1fr; }
       .ms-service-card:first-child { grid-column: auto; }
       .ms-tool-card { flex: 0 1 100%; }
       .ms-work-grid { grid-template-columns: 1fr; }
       .ms-hero-btns { flex-direction: column; width: 100%; max-width: 300px; }
       .ms-btn-primary, .ms-btn-outline { width: 100%; text-align: center; }
+      .ms-work-thumb { height: 160px; }
+      .ms-work-info { padding: 20px; }
     }
     @media (max-width: 480px) {
       .ms-hero h1 { font-size: 30px; }
@@ -468,11 +437,11 @@
   <nav class="ms-nav" id="navbar">
     <div class="ms-logo">MS</div>
     <ul class="ms-nav-links">
-      <li onclick="scrollTo('about')">About</li>
-      <li onclick="scrollTo('services')">Services</li>
-      <li onclick="scrollTo('tools')">Tools</li>
-      <li onclick="scrollTo('work')">Work</li>
-      <li onclick="scrollTo('contact')">Contact</li>
+      <li onclick="scrollToSection('about')">About</li>
+      <li onclick="scrollToSection('services')">Services</li>
+      <li onclick="scrollToSection('tools')">Tools</li>
+      <li onclick="scrollToSection('work')">Work</li>
+      <li onclick="scrollToSection('contact')">Contact</li>
     </ul>
     <div class="ms-hamburger" id="hamburger" onclick="toggleMenu()">
       <span></span><span></span><span></span>
@@ -481,11 +450,11 @@
 
   <!-- MOBILE MENU -->
   <div class="ms-mobile-menu" id="mobileMenu">
-    <li onclick="scrollTo('about')">About</li>
-    <li onclick="scrollTo('services')">Services</li>
-    <li onclick="scrollTo('tools')">Tools</li>
-    <li onclick="scrollTo('work')">Work</li>
-    <li onclick="scrollTo('contact')">Contact</li>
+    <li onclick="scrollToSection('about')">About</li>
+    <li onclick="scrollToSection('services')">Services</li>
+    <li onclick="scrollToSection('tools')">Tools</li>
+    <li onclick="scrollToSection('work')">Work</li>
+    <li onclick="scrollToSection('contact')">Contact</li>
   </div>
 
   <!-- HERO -->
@@ -494,8 +463,8 @@
       <h1>Websites, SEO &amp; campaigns built to <span>grow real businesses</span></h1>
       <p>I design and develop conversion-focused websites, SEO systems, and performance campaigns that help brands attract, engage, and convert the right audience.</p>
       <div class="ms-hero-btns">
-        <button class="ms-btn-primary" onclick="scrollTo('contact')">Let's Build Together</button>
-        <button class="ms-btn-outline" onclick="scrollTo('work')">View My Work</button>
+        <button class="ms-btn-primary" onclick="scrollToSection('contact')">Let's Build Together</button>
+        <button class="ms-btn-outline" onclick="scrollToSection('work')">View My Work</button>
       </div>
     </div>
   </section>
@@ -505,17 +474,16 @@
     <div class="ms-about">
       <div class="ms-about-text">
         <h2>About Me</h2>
-<p>I am <strong>Mohammed Sohail Sayyed</strong> — a digital marketer with a strong focus on performance-driven growth. I help businesses attract the right audience, increase visibility, and generate consistent leads through data-backed marketing strategies.</p>
-<p>My expertise spans SEO, paid advertising, and conversion optimization, allowing me to build marketing systems that drive real, measurable results. Every campaign I manage is guided by analytics, user behavior, and ROI — not guesswork.</p>
-<p>Alongside marketing, I am also a web developer who builds fast, responsive, and conversion-focused websites. By combining technical development with marketing strategy, I ensure websites are not just visually appealing, but optimized to support business growth.</p>
-
-
+        <p>I am <strong>Mohammed Sohail Sayyed</strong> — a digital marketer with a strong focus on performance-driven growth. I help businesses attract the right audience, increase visibility, and generate consistent leads through data-backed marketing strategies.</p>
+        <p>My expertise spans SEO, paid advertising, and conversion optimization, allowing me to build marketing systems that drive real, measurable results. Every campaign I manage is guided by analytics, user behavior, and ROI — not guesswork.</p>
+        <p>Alongside marketing, I am also a web developer who builds fast, responsive, and conversion-focused websites. By combining technical development with marketing strategy, I ensure websites are not just visually appealing, but optimized to support business growth.</p>
       </div>
-<div class="ms-about-img">
-  <div class="ms-about-img-inner">
-    <img src="https://i.ibb.co/YF09PgGg/1758804697286.jpg" alt="Digital Marketing and Web Development">
-  </div>
-</div>
+      <div class="ms-about-img">
+        <div class="ms-about-img-inner">
+          <img src="https://i.ibb.co/YF09PgGg/1758804697286.jpg" alt="Digital Marketing and Web Development">
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- SERVICES -->
@@ -619,7 +587,7 @@
       <h3>Profilelinc</h3>
       <div class="ms-work-tag">GoHighLevel</div>
       <p>Professional networking platform with custom CRM integration and automated workflows.</p>
-      <span class="ms-work-link">View Project →</span>
+      <a href="https://profilelinc.com/" target="_blank" class="ms-work-link">View Project →</a>
     </div>
   </div>
 
@@ -631,7 +599,7 @@
       <h3>Voz d Victoria</h3>
       <div class="ms-work-tag">WordPress</div>
       <p>Translation service website with multilingual support.</p>
-      <span class="ms-work-link">View Project →</span>
+      <a href="https://vozdvictoria.com/" target="_blank" class="ms-work-link">View Project →</a>
     </div>
   </div>
 
@@ -643,7 +611,7 @@
       <h3>HTML Presentation</h3>
       <div class="ms-work-tag">Custom HTML</div>
       <p>Interactive business presentation with custom animations and responsive design.</p>
-      <span class="ms-work-link">View Project →</span>
+      <a href="https://profilelinc.com/pfs-overview" target="_blank" class="ms-work-link">View Project →</a>
     </div>
   </div>
 </div>
@@ -656,10 +624,10 @@
       <p>Looking for a website or growth system that actually performs?<br />Let's discuss your project and create something amazing.</p>
     </div>
     <div class="ms-contact-items">
-      <div class="ms-contact-item"><span>📧</span> mohammedsohailsayyed99@gmail.com</div>
+      <div class="ms-contact-item"><span>📧</span> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="dfb2b0b7beb2b2babbacb0b7beb6b3acbea6a6babbe6e69fb8b2beb6b3f1bcb0b2">[email&#160;protected]</a></div>
       <div class="ms-contact-item"><span>📞</span> +91 9987-026-056</div>
     </div>
-    <a href="mailto:sohailsayyed840@gmail.com" class="ms-btn-contact">Get In Touch</a>
+    <a href="/cdn-cgi/l/email-protection#92e1fdfaf3fbfee1f3ebebf7f6aaa6a2d2f5fff3fbfebcf1fdff" class="ms-btn-contact">Get In Touch</a>
   </section>
 
   <!-- FOOTER -->
@@ -668,10 +636,20 @@
     <p>© 2026 · Mohammed Sohail Sayyed · Built with passion for performance</p>
   </footer>
 
-  <script>
-    // Scroll to section
-    function scrollTo(id) {
-      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    // Fixed scroll to section with proper offset
+    function scrollToSection(id) {
+      const element = document.getElementById(id);
+      if (element) {
+        const navHeight = document.getElementById('navbar').offsetHeight;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - navHeight - 20;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
       closeMobileMenu();
     }
 
