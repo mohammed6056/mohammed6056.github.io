@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mohammed Sohail Sayyed — Web Developer & Digital Marketing</title>
+  <title>Mohammed Sohail Sayyed — Digital Marketer & Web Developer</title>
   <meta name="description" content="I design and develop conversion-focused websites, SEO systems, and performance campaigns that help brands grow." />
   <meta name="author" content="Mohammed Sohail Sayyed" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -131,27 +131,86 @@
     }
     .ms-section-title span { color: #4caf50; }
 
-    /* ===== ABOUT ===== */
-    .ms-about {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 60px; align-items: center;
-    }
-    .ms-about-text h2 {
-      font-size: clamp(28px, 3.5vw, 38px); font-weight: 800;
-      color: #4caf50; margin-bottom: 24px;
-    }
-    .ms-about-text p {
-      font-size: 16px; color: #555; line-height: 1.8; margin-bottom: 16px;
-    }
-    .ms-about-text strong { color: #1a1a2e; }
-    .ms-about-img {
-      width: 100%; aspect-ratio: 4/3; border-radius: 20px;
-      background: linear-gradient(135deg, #b8e6ff, #c8b6ff, #e8b4f8);
-      display: flex; align-items: center; justify-content: center;
-      position: relative; overflow: hidden;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.1);
-    }
-    .ms-about-img-inner { font-size: 64px; opacity: 0.6; }
+    /* ===== ABOUT ===== *//* ===== ABOUT SECTION ===== */
+.ms-about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* ===== TEXT ===== */
+.ms-about-text h2 {
+  font-size: clamp(28px, 3.5vw, 38px);
+  font-weight: 800;
+  color: #4caf50;
+  margin-bottom: 24px;
+}
+
+.ms-about-text p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.ms-about-text strong {
+  color: #1a1a2e;
+}
+
+/* ===== IMAGE ===== */
+.ms-about-img {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  height: 420px;
+  margin-left: auto;
+}
+
+.ms-about-img-inner {
+  position: relative;
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #f3f4f6;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+}
+
+.ms-about-img-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Subtle overlay for depth */
+.ms-about-img-inner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.04),
+    rgba(0, 0, 0, 0.15)
+  );
+  pointer-events: none;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .ms-about {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .ms-about-img {
+    max-width: 100%;
+    height: 360px;
+    margin: 0 auto;
+  }
+}
+
 
     /* ===== SERVICES ===== */
     .ms-services-header { text-align: center; margin-bottom: 60px; }
@@ -205,39 +264,129 @@
     .ms-tool-card li::before { content: '▸'; color: #4caf50; font-weight: 700; }
 
     /* ===== WORK ===== */
-    .ms-work-header { text-align: center; margin-bottom: 20px; }
-    .ms-work-disclaimer {
-      text-align: center; background: #fafbfc; border-radius: 12px;
-      padding: 20px 28px; margin-bottom: 48px; color: #666;
-      font-size: 15px; line-height: 1.6;
-    }
-    .ms-work-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 28px;
-    }
-    .ms-work-card {
-      background: #fafbfc; border: 1px solid #f0f0f0;
-      border-radius: 16px; overflow: hidden; transition: all 0.3s ease;
-    }
-    .ms-work-card:hover {
-      transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.08);
-    }
-    .ms-work-thumb {
-      height: 180px; background: linear-gradient(135deg, #f5f5f5, #eee);
-      display: flex; align-items: center; justify-content: center; font-size: 56px;
-    }
-    .ms-work-info { padding: 24px; }
-    .ms-work-info h3 {
-      font-size: 20px; font-weight: 700; color: #1a1a2e; margin-bottom: 6px;
-    }
-    .ms-work-info .ms-work-tag {
-      font-size: 13px; font-weight: 600; color: #4caf50; margin-bottom: 12px;
-    }
-    .ms-work-info p { font-size: 14px; color: #666; line-height: 1.6; margin-bottom: 16px; }
-    .ms-work-link {
-      font-size: 14px; font-weight: 600; color: #4caf50;
-      cursor: pointer; text-decoration: none; transition: color 0.3s;
-    }
-    .ms-work-link:hover { color: #388e3c; }
+/* ===== WORK SECTION ===== */
+.ms-work-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.ms-work-disclaimer {
+  text-align: center;
+  background: #fafbfc;
+  border-radius: 12px;
+  padding: 18px 26px;
+  margin-bottom: 48px;
+  color: #666;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* ===== GRID ===== */
+.ms-work-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 28px;
+}
+
+/* ===== CARD ===== */
+.ms-work-card {
+  background: #fafbfc;
+  border: 1px solid #f0f0f0;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ms-work-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 42px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== IMAGE THUMB ===== */
+.ms-work-thumb {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  background: #f2f3f5;
+}
+
+.ms-work-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.45s ease;
+}
+
+.ms-work-card:hover .ms-work-thumb img {
+  transform: scale(1.06);
+}
+
+/* Subtle overlay for readability */
+.ms-work-thumb::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.05),
+    rgba(0, 0, 0, 0.35)
+  );
+  pointer-events: none;
+}
+
+/* ===== INFO ===== */
+.ms-work-info {
+  padding: 24px;
+}
+
+.ms-work-info h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 6px;
+}
+
+.ms-work-tag {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #4caf50;
+  margin-bottom: 12px;
+}
+
+.ms-work-info p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+/* ===== LINK ===== */
+.ms-work-link {
+  font-size: 14px;
+  font-weight: 600;
+  color: #4caf50;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.25s ease;
+}
+
+.ms-work-link:hover {
+  color: #388e3c;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .ms-work-thumb {
+    height: 160px;
+  }
+
+  .ms-work-info {
+    padding: 20px;
+  }
+}
 
     /* ===== CONTACT ===== */
     .ms-contact { text-align: center; }
@@ -356,14 +505,17 @@
     <div class="ms-about">
       <div class="ms-about-text">
         <h2>About Me</h2>
-        <p>I'm <strong>Mohammed Sohail Sayyed</strong> — a web developer and digital marketing specialist with a strong focus on performance. Every project I work on is built with speed, SEO, and conversions at the core.</p>
-        <p>My approach combines technical expertise with strategic thinking to deliver solutions that don't just look good, but actually drive measurable business results.</p>
-        <p>With years of experience in web development, SEO optimization, and digital advertising, I help businesses establish a strong online presence and achieve sustainable growth.</p>
+<p>I am <strong>Mohammed Sohail Sayyed</strong> — a digital marketer with a strong focus on performance-driven growth. I help businesses attract the right audience, increase visibility, and generate consistent leads through data-backed marketing strategies.</p>
+<p>My expertise spans SEO, paid advertising, and conversion optimization, allowing me to build marketing systems that drive real, measurable results. Every campaign I manage is guided by analytics, user behavior, and ROI — not guesswork.</p>
+<p>Alongside marketing, I am also a web developer who builds fast, responsive, and conversion-focused websites. By combining technical development with marketing strategy, I ensure websites are not just visually appealing, but optimized to support business growth.</p>
+
+
       </div>
-      <div class="ms-about-img">
-        <div class="ms-about-img-inner">🔍 &lt;/&gt; 📊 🌐 SEO</div>
-      </div>
-    </div>
+<div class="ms-about-img">
+  <div class="ms-about-img-inner">
+    <img src="https://i.ibb.co/YF09PgGg/1758804697286.jpg" alt="Digital Marketing and Web Development">
+  </div>
+</div>
   </section>
 
   <!-- SERVICES -->
@@ -456,35 +608,45 @@
     <div class="ms-work-disclaimer">
       These projects reflect my contribution to development, optimization, structure, or performance. Ownership remains with respective businesses.
     </div>
-    <div class="ms-work-grid">
-      <div class="ms-work-card">
-        <div class="ms-work-thumb">🔗</div>
-        <div class="ms-work-info">
-          <h3>Profilelinc</h3>
-          <div class="ms-work-tag">GoHighLevel</div>
-          <p>Professional networking platform with custom CRM integration and automated workflows.</p>
-          <span class="ms-work-link">View Project →</span>
-        </div>
-      </div>
-      <div class="ms-work-card">
-        <div class="ms-work-thumb">🚗</div>
-        <div class="ms-work-info">
-          <h3>Voz d Victoria</h3>
-          <div class="ms-work-tag">WordPress</div>
-          <p>Translation service website with multilingual support.</p>
-          <span class="ms-work-link">View Project →</span>
-        </div>
-      </div>
-      <div class="ms-work-card">
-        <div class="ms-work-thumb">📊</div>
-        <div class="ms-work-info">
-          <h3>HTML Presentation</h3>
-          <div class="ms-work-tag">Custom HTML</div>
-          <p>Interactive business presentation with custom animations and responsive design.</p>
-          <span class="ms-work-link">View Project →</span>
-        </div>
-      </div>
+   
+   <div class="ms-work-grid">
+
+  <div class="ms-work-card">
+    <div class="ms-work-thumb">
+      <img src="https://i.ibb.co/FqsrtqQs/Profilelinc.png" alt="Profilelinc Project">
     </div>
+    <div class="ms-work-info">
+      <h3>Profilelinc</h3>
+      <div class="ms-work-tag">GoHighLevel</div>
+      <p>Professional networking platform with custom CRM integration and automated workflows.</p>
+      <span class="ms-work-link">View Project →</span>
+    </div>
+  </div>
+
+  <div class="ms-work-card">
+    <div class="ms-work-thumb">
+      <img src="https://i.ibb.co/JjfzQSjN/Vozd-Victoria.png" alt="Voz d Victoria Project">
+    </div>
+    <div class="ms-work-info">
+      <h3>Voz d Victoria</h3>
+      <div class="ms-work-tag">WordPress</div>
+      <p>Translation service website with multilingual support.</p>
+      <span class="ms-work-link">View Project →</span>
+    </div>
+  </div>
+
+  <div class="ms-work-card">
+    <div class="ms-work-thumb">
+      <img src="https://i.ibb.co/r2LTW5Gm/presentation.png" alt="HTML Presentation Project">
+    </div>
+    <div class="ms-work-info">
+      <h3>HTML Presentation</h3>
+      <div class="ms-work-tag">Custom HTML</div>
+      <p>Interactive business presentation with custom animations and responsive design.</p>
+      <span class="ms-work-link">View Project →</span>
+    </div>
+  </div>
+</div>
   </section>
 
   <!-- CONTACT -->
@@ -494,7 +656,7 @@
       <p>Looking for a website or growth system that actually performs?<br />Let's discuss your project and create something amazing.</p>
     </div>
     <div class="ms-contact-items">
-      <div class="ms-contact-item"><span>📧</span> sohailsayyed840@gmail.com</div>
+      <div class="ms-contact-item"><span>📧</span> mohammedsohailsayyed99@gmail.com</div>
       <div class="ms-contact-item"><span>📞</span> +91 9987-026-056</div>
     </div>
     <a href="mailto:sohailsayyed840@gmail.com" class="ms-btn-contact">Get In Touch</a>
@@ -502,7 +664,7 @@
 
   <!-- FOOTER -->
   <footer class="ms-footer">
-    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="ms-footer-linkedin">💼 LinkedIn Profile</a>
+    <a href="https://www.linkedin.com/in/mohammed-sohail-sayyed" target="_blank" rel="noopener noreferrer" class="ms-footer-linkedin">💼 LinkedIn Profile</a>
     <p>© 2026 · Mohammed Sohail Sayyed · Built with passion for performance</p>
   </footer>
 
