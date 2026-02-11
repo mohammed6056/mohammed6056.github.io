@@ -45,10 +45,10 @@
       flex-shrink: 0;
     }
     .ms-nav-links {
-      display: flex; gap: 36px; list-style: none;
+      display: flex; gap: 32px; list-style: none;
     }
     .ms-nav-links li {
-      cursor: pointer; font-size: 15px; font-weight: 500;
+      cursor: pointer; font-size: 14px; font-weight: 500;
       color: #555; transition: color 0.3s ease;
     }
     .ms-nav-links li:hover { color: #2d7a4f; }
@@ -355,6 +355,141 @@
       color: #388e3c;
     }
 
+    /* ===== PERFORMANCE MARKETING CAMPAIGNS - COMPACT ===== */
+    .ms-campaign-card {
+      background: #fafbfc;
+      border: 1px solid #f0f0f0;
+      border-radius: 16px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .ms-campaign-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 42px rgba(0, 0, 0, 0.08);
+    }
+
+    .ms-campaign-card .ms-work-info {
+      padding: 24px;
+    }
+
+    .ms-campaign-card .ms-work-info h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #1a1a2e;
+      margin-bottom: 8px;
+    }
+
+    .ms-campaign-card .ms-work-tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      color: #fff;
+      background: linear-gradient(135deg, #4caf50, #2d7a4f);
+      padding: 5px 12px;
+      border-radius: 20px;
+      margin-bottom: 14px;
+    }
+
+    .ms-campaign-card .ms-work-info p {
+      font-size: 13px;
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    .ms-campaign-card .ms-work-info p strong {
+      color: #1a1a2e;
+      font-weight: 600;
+    }
+
+    .ms-campaign-points {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 12px 0;
+    }
+
+    .ms-campaign-points li {
+      font-size: 13px;
+      color: #555;
+      line-height: 1.6;
+      padding: 4px 0 4px 20px;
+      position: relative;
+    }
+
+    .ms-campaign-points li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: #4caf50;
+      font-weight: 700;
+    }
+
+    .ms-campaign-results {
+      list-style: none;
+      padding: 12px 16px;
+      margin: 0 0 12px 0;
+      background: linear-gradient(135deg, #e8faf0, #f0fdf4);
+      border-radius: 10px;
+      border: 1px solid #d0f5e0;
+    }
+
+    .ms-campaign-results li {
+      font-size: 13px;
+      color: #2d7a4f;
+      font-weight: 600;
+      line-height: 1.7;
+      padding: 2px 0;
+    }
+
+    .ms-campaign-card .ms-work-link {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 600;
+      color: #888;
+      background: #f0f0f0;
+      padding: 6px 14px;
+      border-radius: 6px;
+      text-decoration: none;
+      cursor: default;
+      transition: none;
+    }
+
+    .ms-campaign-card .ms-work-link:hover {
+      color: #888;
+    }
+
+    /* Campaign Icon Header - Compact */
+    .ms-campaign-icon {
+      width: 100%;
+      height: 60px;
+      background: linear-gradient(135deg, #1a1a2e 0%, #2d3748 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ms-campaign-icon::before {
+      content: '';
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(76,175,80,0.1) 0%, transparent 50%);
+      animation: pulse-bg 4s ease-in-out infinite;
+    }
+
+    @keyframes pulse-bg {
+      0%, 100% { transform: scale(1); opacity: 0.5; }
+      50% { transform: scale(1.1); opacity: 0.8; }
+    }
+
+    .ms-campaign-icon span {
+      font-size: 28px;
+      z-index: 1;
+    }
+
     /* ===== CONTACT ===== */
     .ms-contact { text-align: center; }
     .ms-contact-header { margin-bottom: 40px; }
@@ -367,9 +502,51 @@
       display: flex; align-items: center; justify-content: center; gap: 14px;
       padding: 18px 28px; background: #fafbfc; border: 1px solid #f0f0f0;
       border-radius: 14px; font-size: 16px; color: #555; transition: all 0.3s ease;
+      text-decoration: none;
     }
     .ms-contact-item:hover { box-shadow: 0 4px 15px rgba(0,0,0,0.06); }
     .ms-contact-item span { font-size: 22px; }
+    .ms-contact-item.clickable:hover { 
+      border-color: #4caf50; 
+      color: #2d7a4f;
+    }
+    .ms-social-row {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+    }
+    .ms-social-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 16px 24px;
+      background: #fafbfc;
+      border: 1px solid #f0f0f0;
+      border-radius: 14px;
+      font-size: 15px;
+      font-weight: 600;
+      color: #555;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      flex: 1;
+      max-width: 240px;
+    }
+    .ms-social-item:hover {
+      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+      transform: translateY(-2px);
+    }
+    .ms-social-item.linkedin:hover {
+      border-color: #0077b5;
+      color: #0077b5;
+    }
+    .ms-social-item.instagram:hover {
+      border-color: #E4405F;
+      color: #E4405F;
+    }
+    .ms-social-item span {
+      font-size: 20px;
+    }
     .ms-btn-contact {
       display: inline-block; padding: 18px 48px;
       background: linear-gradient(135deg, #e8faf0, #d0f5e0);
@@ -423,6 +600,10 @@
       .ms-btn-primary, .ms-btn-outline { width: 100%; text-align: center; }
       .ms-work-thumb { height: 160px; }
       .ms-work-info { padding: 20px; }
+      .ms-campaign-icon { height: 50px; }
+      .ms-campaign-icon span { font-size: 24px; }
+      .ms-social-row { flex-direction: column; }
+      .ms-social-item { max-width: 100%; }
     }
     @media (max-width: 480px) {
       .ms-hero h1 { font-size: 30px; }
@@ -441,6 +622,7 @@
       <li onclick="scrollToSection('services')">Services</li>
       <li onclick="scrollToSection('tools')">Tools</li>
       <li onclick="scrollToSection('work')">Work</li>
+      <li onclick="scrollToSection('performance')">Campaigns</li>
       <li onclick="scrollToSection('contact')">Contact</li>
     </ul>
     <div class="ms-hamburger" id="hamburger" onclick="toggleMenu()">
@@ -454,6 +636,7 @@
     <li onclick="scrollToSection('services')">Services</li>
     <li onclick="scrollToSection('tools')">Tools</li>
     <li onclick="scrollToSection('work')">Work</li>
+    <li onclick="scrollToSection('performance')">Campaigns</li>
     <li onclick="scrollToSection('contact')">Contact</li>
   </div>
 
@@ -617,22 +800,149 @@
 </div>
   </section>
 
+  <!-- PERFORMANCE MARKETING CAMPAIGNS -->
+  <section id="performance" class="ms-section ms-fade-in">
+    <div class="container">
+
+      <div class="ms-work-header">
+        <h2 class="ms-section-title">Performance Marketing <span>Campaigns</span></h2>
+      </div>
+      <div class="ms-work-disclaimer">
+        Campaign metrics are shared as percentage improvements and performance ranges to maintain client confidentiality.
+      </div>
+
+      <div class="ms-work-grid">
+
+        <!-- Case Study 1 -->
+        <div class="ms-campaign-card">
+          <div class="ms-campaign-icon">
+            <span>💊</span>
+          </div>
+          <div class="ms-work-info">
+            <h3>Medicinal Lead Generation</h3>
+            <div class="ms-work-tag">Google Ads · Healthcare</div>
+
+            <p><strong>Brand:</strong> Quadcities Wellness (Spravato)</p>
+
+            <p><strong>Objective:</strong> Generate qualified medical inquiries while complying with Google Ads pharmaceutical policies.</p>
+
+            <p><strong>Strategy:</strong></p>
+            <ul class="ms-campaign-points">
+              <li>Policy-compliant keyword restructuring</li>
+              <li>Intent-based search targeting</li>
+              <li>Landing page optimization</li>
+            </ul>
+
+            <p><strong>Results:</strong></p>
+            <ul class="ms-campaign-results">
+              <li>⬇️ Cost per lead reduced by ~30%</li>
+              <li>⬆️ Improved lead quality</li>
+              <li>⬆️ Stable ad approval rate</li>
+            </ul>
+
+            <span class="ms-work-link">Client data protected</span>
+          </div>
+        </div>
+
+        <!-- Case Study 2 -->
+        <div class="ms-campaign-card">
+          <div class="ms-campaign-icon">
+            <span>🛒</span>
+          </div>
+          <div class="ms-work-info">
+            <h3>E-commerce Sales Growth</h3>
+            <div class="ms-work-tag">Meta Ads · Google Ads · Shopify</div>
+
+            <p><strong>Brand:</strong> Coveted Forge (3D Printed Products)</p>
+
+            <p><strong>Objective:</strong> Scale sales for niche 3D-printed products and identify high-converting audiences.</p>
+
+            <p><strong>Strategy:</strong></p>
+            <ul class="ms-campaign-points">
+              <li>Interest & lookalike audience testing</li>
+              <li>Creative testing (static & video)</li>
+              <li>Retargeting cart abandoners</li>
+            </ul>
+
+            <p><strong>Results:</strong></p>
+            <ul class="ms-campaign-results">
+              <li>⬆️ Improved ROAS over cycles</li>
+              <li>⬆️ Higher conversion rate</li>
+              <li>⬇️ Reduced cost per purchase</li>
+            </ul>
+
+            <span class="ms-work-link">Shopify funnel optimized</span>
+          </div>
+        </div>
+
+        <!-- Case Study 3 -->
+        <div class="ms-campaign-card">
+          <div class="ms-campaign-icon">
+            <span>📱</span>
+          </div>
+          <div class="ms-work-info">
+            <h3>Mobile App Install Campaign</h3>
+            <div class="ms-work-tag">Google App · Meta Ads</div>
+
+            <p><strong>Brand:</strong> Apex Fresh Pvt Ltd</p>
+
+            <p><strong>Objective:</strong> Increase app installs and onboard retailers to a B2B grocery platform.</p>
+
+            <p><strong>Strategy:</strong></p>
+            <ul class="ms-campaign-points">
+              <li>Google App campaigns for scale</li>
+              <li>Meta interest-based targeting</li>
+              <li>Play Store listing optimization</li>
+            </ul>
+
+            <p><strong>Results:</strong></p>
+            <ul class="ms-campaign-results">
+              <li>⬆️ Consistent increase in installs</li>
+              <li>⬇️ Optimized cost per install</li>
+              <li>⬆️ Better retailer onboarding</li>
+            </ul>
+
+            <span class="ms-work-link">App growth focused</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- CONTACT -->
   <section id="contact" class="ms-section ms-contact ms-fade-in">
     <div class="ms-contact-header">
       <h2 class="ms-section-title">Let's Work <span>Together</span></h2>
       <p>Looking for a website or growth system that actually performs?<br />Let's discuss your project and create something amazing.</p>
     </div>
-    <div class="ms-contact-items">
-      <div class="ms-contact-item"><span>📧</span> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="dfb2b0b7beb2b2babbacb0b7beb6b3acbea6a6babbe6e69fb8b2beb6b3f1bcb0b2">[email&#160;protected]</a></div>
-      <div class="ms-contact-item"><span>📞</span> +91 9987-026-056</div>
-    </div>
-    <a href="/cdn-cgi/l/email-protection#92e1fdfaf3fbfee1f3ebebf7f6aaa6a2d2f5fff3fbfebcf1fdff" class="ms-btn-contact">Get In Touch</a>
+<div class="ms-contact-items">
+  <div class="ms-contact-item">
+    <span>📧</span>
+    <a href="mailto:mdsohail6056@gmail.com">mdsohail6056@gmail.com</a>
+  </div>
+
+  <div class="ms-contact-item">
+    <span>📞</span> +91 9987-026-056
+  </div>
+
+  <div class="ms-social-row">
+    <a href="https://www.linkedin.com/in/mohammed-sohail-sayyed"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="ms-social-item linkedin">
+      <span>💼</span> LinkedIn
+    </a>
+  </div>
+</div>
+
+<a href="mailto:mdsohail6056@gmail.com" class="ms-btn-contact">
+  Get In Touch
+</a>
   </section>
 
   <!-- FOOTER -->
   <footer class="ms-footer">
-    <a href="https://www.linkedin.com/in/mohammed-sohail-sayyed" target="_blank" rel="noopener noreferrer" class="ms-footer-linkedin">💼 LinkedIn Profile</a>
     <p>© 2026 · Mohammed Sohail Sayyed · Built with passion for performance</p>
   </footer>
 
