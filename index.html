@@ -1,0 +1,3213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mohammed Sohail Sayyed — Freelance Digital Marketing Consultant</title>
+  <meta name="description" content="Independent digital marketing consultant specializing in custom website design, technical SEO, social media management, and dedicated monthly growth retainers." />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Mohammed Sohail Sayyed" />
+  <meta property="og:title" content="Mohammed Sohail Sayyed — Freelance Digital Marketing Consultant" />
+  <meta property="og:description" content="High-performance websites, technical SEO, and scalable digital marketing strategies engineered for real business growth." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9A%A1%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Mohammed Sohail Sayyed",
+    "jobTitle": "Freelance Digital Marketing Consultant",
+    "image": "https://i.ibb.co/YF09PgGg/1758804697286.jpg",
+    "sameAs": [
+      "https://www.linkedin.com/in/mohammed-sohail-sayyed"
+    ],
+    "knowsAbout": [
+      "Website Design & Development",
+      "Search Engine Optimization (SEO)",
+      "Technical SEO",
+      "Social Media Management",
+      "Graphic Design & Creative Content",
+      "Conversion Optimization"
+    ]
+  }
+  </script>
+
+  <style>
+    /* ==========================================================================
+       MODERN RESET & DESIGN TOKENS
+       ========================================================================== */
+    :root {
+      --bg-base: #06080d;
+      --bg-surface: #0a0e17;
+      --bg-surface-elevated: #111827;
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-hover: rgba(56, 189, 248, 0.35);
+      --border-focus: #38bdf8;
+      
+      --text-primary: #f8fafc;
+      --text-secondary: #94a3b8;
+      --text-muted: #64748b;
+      
+      --accent-cyan: #38bdf8;
+      --accent-indigo: #6366f1;
+      --accent-emerald: #10b981;
+      
+      --font-heading: 'Sora', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 24px;
+      
+      --container-max: 1200px;
+      --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      --transition-smooth: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      color-scheme: dark;
+    }
+
+    body {
+      background-color: var(--bg-base);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Ambient background gradient meshes */
+    .ambient-bg {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+    .ambient-glow-1 {
+      position: absolute;
+      top: -15%;
+      left: 15%;
+      width: 750px;
+      height: 750px;
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.12) 0%, rgba(99, 102, 241, 0.05) 50%, transparent 75%);
+      filter: blur(100px);
+    }
+    .ambient-glow-2 {
+      position: absolute;
+      top: 55%;
+      right: -10%;
+      width: 850px;
+      height: 850px;
+      background: radial-gradient(circle, rgba(99, 102, 241, 0.09) 0%, rgba(56, 189, 248, 0.04) 50%, transparent 75%);
+      filter: blur(120px);
+    }
+
+    /* Scroll progress bar */
+    #scrollProgress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      width: 0%;
+      background: linear-gradient(90deg, var(--accent-cyan), var(--accent-indigo));
+      z-index: 1000;
+      transition: width 0.1s ease-out;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color var(--transition-fast);
+    }
+
+    button, input, select, textarea {
+      font-family: inherit;
+      font-size: inherit;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ==========================================================================
+       NAVBAR
+       ========================================================================== */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(6, 8, 13, 0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-subtle);
+      transition: background var(--transition-fast), border-color var(--transition-fast);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.125rem;
+      letter-spacing: -0.02em;
+    }
+    .brand-mark {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border-radius: var(--radius-sm);
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(99, 102, 241, 0.2));
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      color: var(--accent-cyan);
+      font-weight: 800;
+      font-size: 0.95rem;
+    }
+    .brand-text span {
+      color: var(--text-secondary);
+      font-weight: 400;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-link {
+      font-size: 0.925rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      position: relative;
+      padding: 0.5rem 0;
+    }
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--text-primary);
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent-cyan);
+      transition: width var(--transition-fast);
+    }
+    .nav-link.active::after,
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      font-size: 0.925rem;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: all var(--transition-fast);
+      white-space: nowrap;
+    }
+    .btn-sm {
+      padding: 0.5rem 1rem;
+      font-size: 0.85rem;
+    }
+    .btn-lg {
+      padding: 0.95rem 2rem;
+      font-size: 1rem;
+    }
+    .btn-primary {
+      background: var(--accent-cyan);
+      color: #06080d;
+      border-color: var(--accent-cyan);
+      box-shadow: 0 0 20px rgba(56, 189, 248, 0.25);
+    }
+    .btn-primary:hover {
+      background: #7dd3fc;
+      border-color: #7dd3fc;
+      box-shadow: 0 0 30px rgba(56, 189, 248, 0.45);
+      transform: translateY(-1px);
+    }
+    .btn-outline {
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text-primary);
+      border-color: var(--border-subtle);
+      backdrop-filter: blur(8px);
+    }
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.09);
+      border-color: rgba(255, 255, 255, 0.25);
+      color: #ffffff;
+      transform: translateY(-1px);
+    }
+
+    .mobile-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 36px;
+      height: 36px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .mobile-toggle span {
+      width: 100%;
+      height: 2px;
+      background: var(--text-primary);
+      transition: all var(--transition-fast);
+    }
+    .mobile-toggle.open span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    .mobile-toggle.open span:nth-child(2) {
+      opacity: 0;
+    }
+    .mobile-toggle.open span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    .mobile-drawer {
+      position: fixed;
+      top: 72px;
+      left: 0;
+      right: 0;
+      background: rgba(6, 8, 13, 0.98);
+      backdrop-filter: blur(24px);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 1.5rem;
+      display: none;
+      flex-direction: column;
+      gap: 1.25rem;
+      z-index: 99;
+      transform: translateY(-10px);
+      opacity: 0;
+      transition: all var(--transition-smooth);
+    }
+    .mobile-drawer.open {
+      display: flex;
+      transform: translateY(0);
+      opacity: 1;
+    }
+    .mobile-drawer a {
+      font-size: 1.1rem;
+      font-weight: 500;
+      padding: 0.5rem 0;
+      color: var(--text-secondary);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .mobile-drawer a:hover {
+      color: var(--accent-cyan);
+    }
+
+    /* ==========================================================================
+       HERO (DYNAMIC & MINIMALIST VIDEO BACKGROUND)
+       ========================================================================== */
+    .hero-section {
+      position: relative;
+      min-height: 94vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 130px 0 80px;
+      overflow: hidden;
+      background-color: var(--bg-base);
+    }
+
+    .hero-video-wrap {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .hero-video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      transform: translate(-50%, -50%) scale(1.05);
+      object-fit: cover;
+      opacity: 0.42;
+      filter: saturate(1.25) contrast(1.2) brightness(0.72);
+      transition: opacity 1s ease;
+    }
+
+    #heroCanvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+      opacity: 0.7;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      background: radial-gradient(circle at 50% 40%, rgba(6, 8, 13, 0.45) 0%, rgba(6, 8, 13, 0.88) 70%, #06080d 100%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      max-width: 960px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    /* Availability status indicator (clean typography, no Q3/Q4 tag) */
+    .hero-meta-bar {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      background: rgba(17, 24, 39, 0.75);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border-subtle);
+      padding: 0.45rem 1.15rem;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: var(--accent-emerald);
+      position: relative;
+    }
+    .status-dot::after {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border-radius: 50%;
+      border: 1px solid var(--accent-emerald);
+      animation: pulseBeacon 2.5s infinite;
+    }
+    @keyframes pulseBeacon {
+      0% { transform: scale(0.9); opacity: 0.8; }
+      50% { transform: scale(1.9); opacity: 0; }
+      100% { transform: scale(0.9); opacity: 0; }
+    }
+
+    .hero-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2.5rem, 5.8vw, 4.4rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.035em;
+      margin-bottom: 1.5rem;
+      color: #ffffff;
+    }
+    .hero-title .text-gradient {
+      background: linear-gradient(135deg, #ffffff 30%, var(--accent-cyan) 85%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-description {
+      font-size: clamp(1.1rem, 1.8vw, 1.25rem);
+      line-height: 1.65;
+      color: var(--text-secondary);
+      max-width: 760px;
+      margin: 0 auto 2.75rem;
+      font-weight: 400;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+      margin-bottom: 3.5rem;
+    }
+
+    .hero-badges-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2.25rem;
+      flex-wrap: wrap;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+    .hero-badge-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .hero-badge-item svg {
+      color: var(--accent-cyan);
+    }
+
+    .video-control-btn {
+      position: absolute;
+      bottom: 24px;
+      right: 24px;
+      z-index: 5;
+      background: rgba(17, 24, 39, 0.7);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+      border-radius: var(--radius-sm);
+      padding: 6px 12px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all var(--transition-fast);
+    }
+    .video-control-btn:hover {
+      color: var(--text-primary);
+      border-color: var(--border-hover);
+    }
+
+    /* Capability Ticker */
+    .hero-ticker {
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 1rem 0;
+      background: rgba(6, 8, 13, 0.4);
+      backdrop-filter: blur(8px);
+      overflow: hidden;
+      position: relative;
+    }
+    .ticker-track {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      white-space: nowrap;
+      animation: marquee 24s linear infinite;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+    }
+    .ticker-track span.sep {
+      color: var(--accent-cyan);
+      opacity: 0.5;
+    }
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ==========================================================================
+       SECTION HEADERS
+       ========================================================================== */
+    .section {
+      padding: 110px 0;
+      position: relative;
+    }
+    .section-header {
+      max-width: 720px;
+      margin-bottom: 3.5rem;
+    }
+    .section-header.center {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .section-kicker {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent-cyan);
+      margin-bottom: 0.75rem;
+      display: inline-block;
+    }
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 3.5vw, 2.75rem);
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.025em;
+      margin-bottom: 1rem;
+      color: #ffffff;
+    }
+    .section-subtitle {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* ==========================================================================
+       SERVICES: ARCHITECTURAL 2x2 QUADRANT LAYOUT (OPEN, NOT BOXED)
+       ========================================================================== */
+    .quadrant-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      position: relative;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      background: rgba(10, 14, 23, 0.45);
+      backdrop-filter: blur(12px);
+      overflow: hidden;
+    }
+    @media (min-width: 860px) {
+      .quadrant-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .quadrant-cell {
+      padding: clamp(2rem, 4vw, 3.25rem);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: background var(--transition-smooth);
+    }
+    @media (min-width: 860px) {
+      .quadrant-cell:nth-child(1) {
+        border-right: 1px solid var(--border-subtle);
+        border-bottom: 1px solid var(--border-subtle);
+      }
+      .quadrant-cell:nth-child(2) {
+        border-bottom: 1px solid var(--border-subtle);
+      }
+      .quadrant-cell:nth-child(3) {
+        border-right: 1px solid var(--border-subtle);
+      }
+    }
+    @media (max-width: 859px) {
+      .quadrant-cell:not(:last-child) {
+        border-bottom: 1px solid var(--border-subtle);
+      }
+    }
+
+    .quadrant-cell:hover {
+      background: rgba(17, 24, 39, 0.65);
+    }
+
+    .quadrant-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.75rem;
+    }
+    .quadrant-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: var(--radius-sm);
+      background: rgba(56, 189, 248, 0.08);
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-cyan);
+    }
+    .quadrant-num {
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      letter-spacing: 0.1em;
+    }
+
+    .quadrant-title {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 0.85rem;
+      line-height: 1.3;
+    }
+    .quadrant-desc {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.65;
+      margin-bottom: 1.75rem;
+    }
+    .quadrant-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.65rem;
+      margin-bottom: 2rem;
+    }
+    .quadrant-list li {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .quadrant-list li svg {
+      color: var(--accent-cyan);
+      flex-shrink: 0;
+    }
+
+    .quadrant-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--accent-cyan);
+      cursor: pointer;
+      border: none;
+      background: transparent;
+      padding: 0;
+      text-align: left;
+    }
+    .quadrant-cell:hover .quadrant-action {
+      text-decoration: underline;
+    }
+
+    /* ==========================================================================
+       WHY ME: EDITORIAL SPLIT (UNBOXED, BORDERLESS LIST)
+       ========================================================================== */
+    .why-split {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3.5rem;
+      align-items: start;
+    }
+    @media (min-width: 900px) {
+      .why-split {
+        grid-template-columns: 380px 1fr;
+      }
+    }
+
+    .why-sticky-lead {
+      position: sticky;
+      top: 110px;
+    }
+    .why-sticky-lead h3 {
+      font-family: var(--font-heading);
+      font-size: clamp(1.75rem, 2.75vw, 2.25rem);
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.25;
+      margin-bottom: 1.25rem;
+    }
+    .why-sticky-lead p {
+      color: var(--text-secondary);
+      font-size: 1rem;
+      line-height: 1.65;
+      margin-bottom: 2rem;
+    }
+
+    .why-list-ruled {
+      display: flex;
+      flex-direction: column;
+    }
+    .why-row {
+      padding: 1.75rem 0;
+      border-top: 1px solid var(--border-subtle);
+      display: grid;
+      grid-template-columns: 50px 1fr;
+      gap: 1.5rem;
+      transition: padding-left var(--transition-fast), border-color var(--transition-fast);
+    }
+    .why-row:last-child {
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .why-row:hover {
+      padding-left: 0.75rem;
+      border-color: rgba(56, 189, 248, 0.4);
+    }
+    .why-index {
+      font-family: var(--font-heading);
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--accent-cyan);
+      padding-top: 0.2rem;
+    }
+    .why-row h4 {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 0.4rem;
+    }
+    .why-row p {
+      color: var(--text-secondary);
+      font-size: 0.925rem;
+      line-height: 1.6;
+    }
+
+    /* ==========================================================================
+       MONTHLY RETAINERS: 3 SPECIFIC TIERS (2h-239, 3h-319, 4h-409)
+       ========================================================================== */
+    .retainer-trio {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.75rem;
+      align-items: stretch;
+    }
+    .retainer-tier-card {
+      background: rgba(10, 14, 23, 0.6);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      backdrop-filter: blur(12px);
+      transition: all var(--transition-smooth);
+      position: relative;
+    }
+    .retainer-tier-card:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-4px);
+    }
+    .retainer-tier-card.featured {
+      background: linear-gradient(180deg, rgba(17, 24, 39, 0.95) 0%, rgba(10, 14, 23, 0.95) 100%);
+      border-color: var(--accent-cyan);
+      box-shadow: 0 0 35px rgba(56, 189, 248, 0.15);
+    }
+    .featured-tag {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--accent-cyan);
+      color: #06080d;
+      font-size: 0.725rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 4px 14px;
+      border-radius: 9999px;
+    }
+
+    .tier-header {
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .tier-name {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 0.25rem;
+    }
+    .tier-hours {
+      font-size: 0.9rem;
+      color: var(--accent-cyan);
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+    }
+    .tier-price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 0.35rem;
+    }
+    .tier-amount {
+      font-family: var(--font-heading);
+      font-size: 3.25rem;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1;
+    }
+    .tier-currency {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--accent-cyan);
+    }
+    .tier-period {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    .tier-perks {
+      list-style: none;
+      margin-bottom: 2.25rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .tier-perks li {
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.65rem;
+    }
+    .tier-perks li svg {
+      color: var(--accent-cyan);
+      flex-shrink: 0;
+      margin-top: 0.2rem;
+    }
+
+    /* ==========================================================================
+       PROCESS: REAL VISUAL TIMELINE (NO GENERIC BOXES)
+       ========================================================================== */
+    .timeline-track-wrap {
+      position: relative;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 0;
+    }
+    /* Central illuminated spine */
+    .timeline-spine {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 28px;
+      width: 2px;
+      background: linear-gradient(180deg, var(--accent-cyan) 0%, var(--accent-indigo) 65%, transparent 100%);
+    }
+    @media (min-width: 768px) {
+      .timeline-spine {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
+    .timeline-node {
+      position: relative;
+      margin-bottom: 3.5rem;
+      display: flex;
+      flex-direction: column;
+    }
+    .timeline-node:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Milestone Center Node Circle */
+    .node-point {
+      position: absolute;
+      top: 0;
+      left: 28px;
+      transform: translateX(-50%);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #06080d;
+      border: 2px solid var(--accent-cyan);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-cyan);
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      font-weight: 700;
+      z-index: 2;
+      box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+    }
+    @media (min-width: 768px) {
+      .node-point {
+        left: 50%;
+      }
+    }
+
+    .node-body {
+      margin-left: 64px;
+      background: rgba(10, 14, 23, 0.6);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.75rem 2rem;
+      backdrop-filter: blur(8px);
+      transition: all var(--transition-fast);
+    }
+    .node-body:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-2px);
+    }
+    @media (min-width: 768px) {
+      .timeline-node:nth-child(odd) .node-body {
+        margin-left: 0;
+        margin-right: calc(50% + 36px);
+        text-align: right;
+      }
+      .timeline-node:nth-child(even) .node-body {
+        margin-left: calc(50% + 36px);
+      }
+    }
+
+    .node-step-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--accent-cyan);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.4rem;
+      display: inline-block;
+    }
+    .node-heading {
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 0.65rem;
+    }
+    .node-summary {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+    .node-deliverables {
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+    @media (min-width: 768px) {
+      .timeline-node:nth-child(odd) .node-deliverables {
+        justify-content: flex-end;
+      }
+    }
+    .node-tag {
+      background: rgba(255, 255, 255, 0.04);
+      padding: 3px 10px;
+      border-radius: 4px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    /* ==========================================================================
+       APPLICATION DEVELOPMENT IN PRACTICE (REFERENCE SLIDER - FIXED HEIGHT)
+       ========================================================================== */
+    .practice-header-row {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    @media (min-width: 768px) {
+      .practice-header-row {
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-between;
+      }
+    }
+    .practice-accent-bar {
+      width: 44px;
+      height: 4px;
+      background: var(--accent-cyan);
+      border-radius: 2px;
+      margin-bottom: 1rem;
+    }
+    .practice-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 3.2vw, 2.75rem);
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.65rem;
+    }
+    .practice-subtitle-lead {
+      color: var(--text-primary);
+      font-size: 1.05rem;
+      font-weight: 500;
+      margin-bottom: 0.25rem;
+    }
+    .practice-subtitle-sub {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.5;
+      max-width: 720px;
+    }
+    .practice-header-controls {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      flex-shrink: 0;
+    }
+    .practice-counter {
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-secondary);
+      letter-spacing: 0.05em;
+    }
+    .practice-btn-group {
+      display: flex;
+      gap: 0.65rem;
+    }
+    .practice-nav-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-subtle);
+      color: #ffffff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+    .practice-nav-btn:hover {
+      background: rgba(56, 189, 248, 0.12);
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
+      transform: translateY(-2px);
+    }
+    .practice-nav-btn:focus-visible {
+      outline: 2px solid var(--accent-cyan);
+      outline-offset: 2px;
+    }
+    .practice-divider {
+      width: 100%;
+      height: 1px;
+      background: var(--border-subtle);
+      margin-bottom: 2.25rem;
+    }
+
+    /* Fixed Stage: Does NOT change size when switching slides */
+    .practice-stage {
+      position: relative;
+      width: 100%;
+      display: grid;
+      grid-template-areas: "slide";
+      height: 530px;
+      min-height: 530px;
+      max-height: 530px;
+      border-radius: var(--radius-lg);
+      background: rgba(11, 16, 28, 0.7);
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 20px 45px -15px rgba(0, 0, 0, 0.7);
+      overflow: hidden;
+    }
+    @media (max-width: 991px) {
+      .practice-stage {
+        height: 660px;
+        min-height: 660px;
+        max-height: 660px;
+      }
+    }
+    @media (max-width: 640px) {
+      .practice-stage {
+        height: 720px;
+        min-height: 720px;
+        max-height: 720px;
+      }
+    }
+
+    .practice-card {
+      grid-area: slide;
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+      padding: 2.5rem;
+      display: grid;
+      grid-template-columns: 1.15fr 1.25fr;
+      gap: 2.5rem;
+      align-items: center;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transform: translateX(18px);
+      transition: opacity 0.32s cubic-bezier(0.16, 1, 0.3, 1), transform 0.32s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.32s;
+    }
+    @media (max-width: 991px) {
+      .practice-card {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+        gap: 1.5rem;
+        padding: 1.75rem;
+        overflow-y: auto;
+      }
+    }
+    .practice-card.active {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: translateX(0);
+      z-index: 2;
+    }
+
+    /* Left Info Column */
+    .practice-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-width: 0;
+    }
+    .practice-meta-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--accent-cyan);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.65rem;
+    }
+    .practice-card-title {
+      font-family: var(--font-heading);
+      font-size: clamp(1.35rem, 2.2vw, 1.8rem);
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 0.45rem;
+      line-height: 1.25;
+    }
+    .practice-card-role {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      flex-wrap: wrap;
+    }
+    .practice-card-role strong {
+      color: var(--text-secondary);
+    }
+    .practice-card-desc {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+    }
+    .practice-features-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.45rem;
+      margin-bottom: 1.5rem;
+      list-style: none;
+      padding: 0;
+    }
+    @media (min-width: 640px) {
+      .practice-features-list {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    .practice-feature-item {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+    }
+    .practice-feature-item svg {
+      color: var(--accent-cyan);
+      flex-shrink: 0;
+    }
+    .practice-card-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      flex-wrap: wrap;
+    }
+
+    /* Right Preview Column (Modern Browser Window Mockup) */
+    .practice-preview {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border-subtle);
+      background: #060912;
+      box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.8);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      transition: all var(--transition-smooth);
+    }
+    .practice-card:hover .practice-preview {
+      border-color: var(--border-hover);
+    }
+    .practice-browser-bar {
+      height: 34px;
+      background: rgba(15, 23, 42, 0.95);
+      border-bottom: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      padding: 0 12px;
+      gap: 10px;
+    }
+    .practice-browser-dots {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .practice-browser-dots span {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+    }
+    .dot-red { background: #ef4444; }
+    .dot-yellow { background: #eab308; }
+    .dot-green { background: #22c55e; }
+    .practice-url-bar {
+      flex: 1;
+      height: 22px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      padding: 0 8px;
+      gap: 6px;
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    .practice-url-bar svg {
+      color: var(--accent-cyan);
+      flex-shrink: 0;
+    }
+    .practice-img-wrap {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      background: #030712;
+    }
+    .practice-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      transition: transform 0.5s ease;
+      display: block;
+    }
+    .practice-preview:hover .practice-img-wrap img {
+      transform: scale(1.03);
+    }
+    .practice-live-chip {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      background: rgba(10, 14, 23, 0.85);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      padding: 4px 10px;
+      border-radius: 100px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      backdrop-filter: blur(6px);
+    }
+    .live-pulse {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #22c55e;
+      box-shadow: 0 0 8px #22c55e;
+    }
+
+    /* Tabs / Thumbnails below fixed stage */
+    .practice-tabs {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      margin-top: 1.5rem;
+      overflow-x: auto;
+      padding-bottom: 0.5rem;
+      scrollbar-width: none;
+    }
+    .practice-tabs::-webkit-scrollbar {
+      display: none;
+    }
+    .practice-tab-pill {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-secondary);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.45rem 1rem;
+      border-radius: 100px;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    .practice-tab-pill:hover {
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
+      border-color: var(--border-hover);
+    }
+    .practice-tab-pill.active {
+      background: rgba(56, 189, 248, 0.12);
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
+    }
+
+    /* ==========================================================================
+       ABOUT SECTION (ORGANIC SEAMLESS INTEGRATION)
+       ========================================================================== */
+    .about-split {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+    @media (min-width: 900px) {
+      .about-split {
+        grid-template-columns: 340px 1fr;
+        gap: 4.5rem;
+      }
+    }
+    .about-portrait-wrap {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      aspect-ratio: 4 / 5;
+      border: 1px solid var(--border-subtle);
+      background: #0f172a;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    }
+    .about-portrait-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
+    }
+    .about-body-text h3 {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 3.2vw, 2.6rem);
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.2;
+      margin-bottom: 1.25rem;
+    }
+    .about-lead-p {
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+      line-height: 1.75;
+      margin-bottom: 1.25rem;
+    }
+    .about-stats-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin: 2rem 0;
+      padding: 1.5rem 0;
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .about-stat-item strong {
+      display: block;
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #ffffff;
+    }
+    .about-stat-item span {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* ==========================================================================
+       CONTACT SECTION & CLEAN BASE CLOSING
+       ========================================================================== */
+    .contact-unified {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3.5rem;
+    }
+    @media (min-width: 900px) {
+      .contact-unified {
+        grid-template-columns: 1fr 1.3fr;
+      }
+    }
+
+    .contact-details-col {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .contact-direct-links {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      margin: 2rem 0;
+    }
+    .direct-link-card {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 1.25rem;
+      border-radius: var(--radius-sm);
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border-subtle);
+      transition: all var(--transition-fast);
+    }
+    .direct-link-card:hover {
+      border-color: var(--border-hover);
+      background: rgba(255, 255, 255, 0.04);
+    }
+    .direct-icon {
+      font-size: 1.25rem;
+      color: var(--accent-cyan);
+    }
+    .direct-meta small {
+      display: block;
+      font-size: 0.725rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+    }
+    .direct-meta strong {
+      font-size: 0.95rem;
+      color: var(--text-primary);
+    }
+
+    /* Streamlined Contact Form */
+    .contact-form-inner {
+      background: rgba(10, 14, 23, 0.65);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: clamp(2rem, 4vw, 3rem);
+      backdrop-filter: blur(14px);
+    }
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    .form-row-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    @media (max-width: 600px) {
+      .form-row-2 {
+        grid-template-columns: 1fr;
+      }
+    }
+    .form-label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      margin-bottom: 0.5rem;
+    }
+    .form-control {
+      width: 100%;
+      background: rgba(6, 8, 13, 0.85);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 0.85rem 1rem;
+      color: var(--text-primary);
+      outline: none;
+      transition: all var(--transition-fast);
+    }
+    .form-control:focus {
+      border-color: var(--border-focus);
+      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
+      background: rgba(6, 8, 13, 0.98);
+    }
+    .form-control::placeholder {
+      color: var(--text-muted);
+    }
+    select.form-control {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      padding-right: 2.5rem;
+    }
+
+    .form-status {
+      display: none;
+      padding: 1rem;
+      border-radius: var(--radius-sm);
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+    .form-status.success {
+      display: block;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: #34d399;
+    }
+    .form-status.error {
+      display: block;
+      background: rgba(239, 68, 68, 0.1);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      color: #f87171;
+    }
+
+    /* Minimalist closing copyright line (no giant footer) */
+    .closing-bar {
+      margin-top: 5rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* Back to top floating button */
+    .back-to-top {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(17, 24, 39, 0.85);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: all var(--transition-fast);
+      z-index: 90;
+    }
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    .back-to-top:hover {
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 768px) {
+      .nav-menu {
+        display: none;
+      }
+      .mobile-toggle {
+        display: flex;
+      }
+      .hero-section {
+        padding-top: 110px;
+        min-height: auto;
+      }
+      .hero-title {
+        font-size: 2.35rem;
+      }
+      .section {
+        padding: 70px 0;
+      }
+      .hero-badges-row {
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Ambient light gradients -->
+  <div class="ambient-bg" aria-hidden="true">
+    <div class="ambient-glow-1"></div>
+    <div class="ambient-glow-2"></div>
+  </div>
+
+  <!-- Scroll Progress Indicator -->
+  <div id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- ========================================================================
+       NAVBAR
+       ======================================================================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="#hero" class="brand" aria-label="Mohammed Sohail Sayyed Homepage">
+          <div class="brand-mark">MS</div>
+          <div class="brand-text">Mohammed <span>Sohail</span></div>
+        </a>
+
+        <nav aria-label="Primary Navigation">
+          <ul class="nav-menu">
+            <li><a href="#services" class="nav-link">Services</a></li>
+            <li><a href="#why" class="nav-link">Why Me</a></li>
+            <li><a href="#retainers" class="nav-link">Retainers</a></li>
+            <li><a href="#process" class="nav-link">Process</a></li>
+            <li><a href="#projects" class="nav-link">Work</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-actions">
+          <a href="https://calendar.app.google/uzH9KFj874kFUX9L9" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
+            <span>Book a Call</span>
+            <span aria-hidden="true">→</span>
+          </a>
+          <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle mobile menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <a href="#services" class="mobile-link">Services</a>
+    <a href="#why" class="mobile-link">Why Me</a>
+    <a href="#retainers" class="mobile-link">Monthly Retainers</a>
+    <a href="#process" class="mobile-link">Process Timeline</a>
+    <a href="#projects" class="mobile-link">Featured Work</a>
+    <a href="#about" class="mobile-link">About</a>
+    <a href="https://calendar.app.google/uzH9KFj874kFUX9L9" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top: 0.5rem; text-align: center;">Book a Call →</a>
+  </div>
+
+  <main>
+    <!-- ========================================================================
+         HERO SECTION: DYNAMIC & MINIMALIST WITH VIDEO BACKGROUND
+         ======================================================================== -->
+    <section class="hero-section" id="hero">
+      <div class="hero-video-wrap">
+        <!-- High-quality ambient looping video -->
+        <video 
+          id="heroVideo" 
+          class="hero-video" 
+          autoplay 
+          muted 
+          loop 
+          playsinline 
+          poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1920 1080'%3E%3Crect width='100%25' height='100%25' fill='%2306080d'/%3E%3C/svg%3E"
+        >
+          <source src="https://cdn.pixabay.com/video/2020/05/25/40149-425139042_large.mp4" type="video/mp4" />
+          <source src="https://assets.mixkit.co/videos/preview/mixkit-abstract-dark-blue-and-black-waves-41584-large.mp4" type="video/mp4" />
+        </video>
+        <!-- Canvas fallback & ambient particle constellation layer -->
+        <canvas id="heroCanvas"></canvas>
+      </div>
+
+      <!-- Contrast Vignette Overlay -->
+      <div class="hero-overlay"></div>
+
+      <!-- Hero Content -->
+      <div class="container">
+        <div class="hero-content">
+          <!-- Availability Pill (Clean: removed Q3 Q4 tag as requested) -->
+          <div class="hero-meta-bar">
+            <span class="status-dot"></span>
+            <span>Available for new projects</span>
+          </div>
+
+          <h1 class="hero-title">
+            Websites, SEO &amp; Digital Marketing Built to <span class="text-gradient">Grow Your Business.</span>
+          </h1>
+
+          <p class="hero-description">
+            I help businesses build clean, fast websites, rank higher on Google, and turn website visitors into paying customers. Work directly with me—no agency runarounds.
+          </p>
+
+          <div class="hero-actions">
+            <a href="https://calendar.app.google/uzH9KFj874kFUX9L9" target="_blank" rel="noopener" class="btn btn-primary btn-lg">
+              <span>Book a Free Call</span>
+              <span aria-hidden="true">→</span>
+            </a>
+            <a href="#services" class="btn btn-outline btn-lg">
+              <span>See What I Do</span>
+              <span aria-hidden="true">↓</span>
+            </a>
+          </div>
+
+          <div class="hero-badges-row">
+            <div class="hero-badge-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Direct 1-on-1 Work</span>
+            </div>
+            <div class="hero-badge-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Honest, Measurable Results</span>
+            </div>
+            <div class="hero-badge-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Fast Replies (&lt;24h)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Accessible Video Pause/Play Toggle Button -->
+      <button class="video-control-btn" id="videoControlBtn" aria-label="Pause or play background video">
+        <span id="videoControlIcon">⏸</span>
+        <span id="videoControlText">Pause Video</span>
+      </button>
+    </section>
+
+    <!-- Marquee Ticker -->
+    <div class="hero-ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <span>Custom Websites</span> <span class="sep">/</span>
+        <span>Google SEO</span> <span class="sep">/</span>
+        <span>Brand &amp; Graphic Design</span> <span class="sep">/</span>
+        <span>Social Media Management</span> <span class="sep">/</span>
+        <span>Monthly Retainers</span> <span class="sep">/</span>
+        <span>Fast Loading Speed</span> <span class="sep">/</span>
+        <span>Lead Generation</span> <span class="sep">/</span>
+        <span>Custom Websites</span> <span class="sep">/</span>
+        <span>Google SEO</span> <span class="sep">/</span>
+        <span>Brand &amp; Graphic Design</span> <span class="sep">/</span>
+        <span>Social Media Management</span> <span class="sep">/</span>
+        <span>Monthly Retainers</span> <span class="sep">/</span>
+        <span>Fast Loading Speed</span> <span class="sep">/</span>
+        <span>Lead Generation</span> <span class="sep">/</span>
+      </div>
+    </div>
+
+    <!-- ========================================================================
+         CORE SERVICES (2x2 ARCHITECTURAL QUADRANT LAYOUT - UNBOXED)
+         ======================================================================== -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-kicker">What I Do</span>
+          <h2 class="section-title">Everything You Need to Grow Online</h2>
+          <p class="section-subtitle">
+            Four core services to build your web presence, get discovered on Google, and convert visitors into clients.
+          </p>
+        </div>
+
+        <div class="quadrant-grid">
+          <!-- Quadrant 01: Website Design & Development -->
+          <div class="quadrant-cell">
+            <div>
+              <div class="quadrant-top">
+                <div class="quadrant-icon" aria-hidden="true">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
+                </div>
+                <span class="quadrant-num">01 / WEBSITES</span>
+              </div>
+              <h3 class="quadrant-title">Website Design &amp; Development</h3>
+              <p class="quadrant-desc">
+                Custom, modern websites that look great on phones and computers, load fast, and turn visitors into leads and phone calls.
+              </p>
+              <ul class="quadrant-list">
+                <li>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Clean, modern layouts tailored to your brand</span>
+                </li>
+                <li>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Fast loading speeds for mobile &amp; desktop</span>
+                </li>
+                <li>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Built on Webflow, WordPress, GoHighLevel, or code</span>
+                </li>
+                <li>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Clear forms, call buttons, and visitor tracking</span>
+                </li>
+              </ul>
+            </div>
+            <button class="quadrant-action" onclick="quickSelectService('Website Design & Development')">
+              <span>Discuss a Website Build</span>
+              <span aria-hidden="true">→</span>
+            </button>
+          </div>
+
+          <!-- Quadrant 02: Search Engine Optimization -->
+          <div class="quadrant-cell">
+            <div>
+              <div class="quadrant-top">
+                <div class="quadrant-icon" aria-hidden="true">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" x2="21" y1="16.65" y2="16.65"/></svg>
+                </div>
+                <span class="quadrant-num">02 / GOOGLE SEARCH</span>
+              </div>
+              <h3 class="quadrant-title">Search Engine Optimization (SEO)</h3>
+              <p class="quadrant-desc">
+                Help customers find your business when they search on Google. Real SEO strategies that bring steady organic traffic and calls.
+              </p>
+              <ul class="quadrant-list">
+                <li>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Website audit to fix technical and indexing issues</span>
+                </li>
+                <li>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Target the exact keywords your buyers search for</span>
+                </li>
+                <li>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Google Business Profile &amp; local map rankings</span>
+                </li>
+                <li>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Structured pages that rank higher over time</span>
+                </li>
+              </ul>
+            </div>
+            <button class="quadrant-action" onclick="quickSelectService('Search Engine Optimization (SEO)')">
+              <span>Request an SEO Review</span>
+              <span aria-hidden="true">→</span>
+            </button>
+          </div>
+
+          <!-- Quadrant 03: Graphic Design & Creative Content -->
+          <div class="quadrant-cell">
+            <div>
+              <div class="quadrant-top">
+                <div class="quadrant-icon" aria-hidden="true">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+                </div>
+                <span class="quadrant-num">03 / CREATIVE DESIGN</span>
+              </div>
+              <h3 class="quadrant-title">Graphic Design, Video &amp; Content</h3>
+              <p class="quadrant-desc">
+                Clean visual design, presentation decks, and video clips that make your company look professional, established, and trustworthy.
+              </p>
+              <ul class="quadrant-list">
+                <li>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Brand guidelines, logos, and visual assets</span>
+                </li>
+                <li>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Interactive web presentations &amp; slide decks</span>
+                </li>
+                <li>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Marketing banners &amp; social media graphics</span>
+                </li>
+                <li>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Short video edits for Reels, Shorts, and promos</span>
+                </li>
+              </ul>
+            </div>
+            <button class="quadrant-action" onclick="quickSelectService('Graphic Design, Video & Content')">
+              <span>View Creative Options</span>
+              <span aria-hidden="true">→</span>
+            </button>
+          </div>
+
+          <!-- Quadrant 04: Social Media Management -->
+          <div class="quadrant-cell">
+            <div>
+              <div class="quadrant-top">
+                <div class="quadrant-icon" aria-hidden="true">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M7 8h10"/><path d="M7 12h10"/><path d="M7 16h6"/></svg>
+                </div>
+                <span class="quadrant-num">04 / SOCIAL MEDIA</span>
+              </div>
+              <h3 class="quadrant-title">Social Media Management</h3>
+              <p class="quadrant-desc">
+                Keep your social channels active, polished, and connected with your audience without spending hours wondering what to post.
+              </p>
+              <ul class="quadrant-list">
+                <li>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Monthly content planning and publishing schedule</span>
+                </li>
+                <li>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Profile redesigns for LinkedIn and Instagram</span>
+                </li>
+                <li>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Clear, engaging copy written for your audience</span>
+                </li>
+                <li>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Active community engagement and relationship building</span>
+                </li>
+              </ul>
+            </div>
+            <button class="quadrant-action" onclick="quickSelectService('Social Media Management')">
+              <span>Ask About Social Media</span>
+              <span aria-hidden="true">→</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         WHY WORK WITH ME (EDITORIAL SPLIT - UNBOXED)
+         ======================================================================== -->
+    <section class="section" id="why" style="background: rgba(10, 14, 23, 0.4); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+      <div class="container">
+        <div class="why-split">
+          <div class="why-sticky-lead">
+            <span class="section-kicker">Why Work With Me</span>
+            <h3>Direct 1-on-1 Collaboration. No Agency Fluff.</h3>
+            <p>
+              Skip the account managers, long waiting times, and agency overhead. When you work with me, you talk directly to the person planning, building, and optimizing your project.
+            </p>
+            <a href="https://calendar.app.google/uzH9KFj874kFUX9L9" target="_blank" rel="noopener" class="btn btn-outline btn-sm">
+              <span>Book a Quick Call</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
+
+          <div class="why-list-ruled">
+            <div class="why-row">
+              <span class="why-index">01</span>
+              <div>
+                <h4>Focused on Real Business Results</h4>
+                <p>Every website tweak, design choice, and SEO change is made with one goal in mind: helping you get more leads and customers.</p>
+              </div>
+            </div>
+
+            <div class="why-row">
+              <span class="why-index">02</span>
+              <div>
+                <h4>You Deal Directly With Me</h4>
+                <p>No middlemen or juniors passing messages around. We work together directly from start to finish, ensuring clear communication.</p>
+              </div>
+            </div>
+
+            <div class="why-row">
+              <span class="why-index">03</span>
+              <div>
+                <h4>Decisions Based on Real Data</h4>
+                <p>No guesswork. We look at actual search numbers and visitor actions to see what works and keep improving it.</p>
+              </div>
+            </div>
+
+            <div class="why-row">
+              <span class="why-index">04</span>
+              <div>
+                <h4>Clear and Honest Updates</h4>
+                <p>You always know what's being worked on, what comes next, and when it will be delivered. No surprises or radio silence.</p>
+              </div>
+            </div>
+
+            <div class="why-row">
+              <span class="why-index">05</span>
+              <div>
+                <h4>Built for Long-Term Value</h4>
+                <p>We build clean websites and solid Google SEO foundations that keep bringing you customers long after the launch.</p>
+              </div>
+            </div>
+
+            <div class="why-row">
+              <span class="why-index">06</span>
+              <div>
+                <h4>Simple, Flexible Options</h4>
+                <p>Choose from predictable monthly retainers or one-time project sprints that fit your schedule and budget without long lock-ins.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         MONTHLY RETAINERS: EXACTLY 2h-$239, 3h-$319, 4h-$409
+         ======================================================================== -->
+    <section class="section" id="retainers">
+      <div class="container">
+        <div class="section-header center">
+          <span class="section-kicker">Monthly Support</span>
+          <h2 class="section-title">Dedicated Monthly Retainers</h2>
+          <p class="section-subtitle">
+            Dedicated hours every month for your business. Regular website updates, ongoing SEO, and new graphics whenever you need them.
+          </p>
+        </div>
+
+        <div class="retainer-trio">
+          <!-- Tier 1: 2 hrs - 239 -->
+          <article class="retainer-tier-card">
+            <div>
+              <div class="tier-header">
+                <h3 class="tier-name">Lite</h3>
+                <p class="tier-hours">2 Hours / Day · ~10 hrs/week</p>
+                <div class="tier-price-row">
+                  <span class="tier-currency">$</span>
+                  <span class="tier-amount">239</span>
+                  <span class="tier-period">/month</span>
+                </div>
+              </div>
+
+              <ul class="tier-perks">
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Website maintenance &amp; small updates</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Google Business Profile &amp; SEO monitoring</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Marketing banners &amp; graphic design</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Direct email &amp; WhatsApp / Slack support</span>
+                </li>
+              </ul>
+            </div>
+
+            <button class="btn btn-outline" style="width: 100%;" onclick="selectRetainer('2 Hours / Day ($239/mo)')">
+              Select 2 Hours ($239/mo) →
+            </button>
+          </article>
+
+          <!-- Tier 2: 3 hrs - 319 (Featured) -->
+          <article class="retainer-tier-card featured">
+            <span class="featured-tag">Most Popular</span>
+            <div>
+              <div class="tier-header">
+                <h3 class="tier-name">Standard</h3>
+                <p class="tier-hours">3 Hours / Day · ~15 hrs/week</p>
+                <div class="tier-price-row">
+                  <span class="tier-currency">$</span>
+                  <span class="tier-amount">319</span>
+                  <span class="tier-period">/month</span>
+                </div>
+              </div>
+
+              <ul class="tier-perks">
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Active website improvements &amp; new pages</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Ongoing Google SEO &amp; content updates</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Social media posts &amp; video clips</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Monthly performance review &amp; roadmap</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Fast turnaround &amp; priority attention</span>
+                </li>
+              </ul>
+            </div>
+
+            <button class="btn btn-primary" style="width: 100%;" onclick="selectRetainer('3 Hours / Day ($319/mo)')">
+              Select 3 Hours ($319/mo) →
+            </button>
+          </article>
+
+          <!-- Tier 3: 4 hrs - 409 -->
+          <article class="retainer-tier-card">
+            <div>
+              <div class="tier-header">
+                <h3 class="tier-name">Dedicated</h3>
+                <p class="tier-hours">4 Hours / Day · ~20 hrs/week (Half-Day)</p>
+                <div class="tier-price-row">
+                  <span class="tier-currency">$</span>
+                  <span class="tier-amount">409</span>
+                  <span class="tier-period">/month</span>
+                </div>
+              </div>
+
+              <ul class="tier-perks">
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Full website design &amp; custom builds</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Comprehensive SEO &amp; local search strategy</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Full social media management &amp; graphics</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>CRM setup &amp; automated lead workflows (GHL)</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Same-day replies &amp; dedicated partner status</span>
+                </li>
+              </ul>
+            </div>
+
+            <button class="btn btn-outline" style="width: 100%;" onclick="selectRetainer('4 Hours / Day ($409/mo)')">
+              Select 4 Hours ($409/mo) →
+            </button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         PROCESS: REAL CONNECTED TIMELINE (NOT BOXES)
+         ======================================================================== -->
+    <section class="section" id="process" style="background: rgba(10, 14, 23, 0.4); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+      <div class="container">
+        <div class="section-header center">
+          <span class="section-kicker">How We Work</span>
+          <h2 class="section-title">A Simple 4-Step Process</h2>
+          <p class="section-subtitle">
+            Clear milestones so you always know what's happening, with zero confusion or delays.
+          </p>
+        </div>
+
+        <div class="timeline-track-wrap">
+          <!-- Central illuminated glowing spine -->
+          <div class="timeline-spine" aria-hidden="true"></div>
+
+          <!-- Step 01 -->
+          <div class="timeline-node">
+            <div class="node-point">01</div>
+            <div class="node-body">
+              <span class="node-step-tag">Step 01 · Week 1</span>
+              <h3 class="node-heading">Discovery &amp; Review</h3>
+              <p class="node-summary">
+                We talk through your goals, review your existing website and Google ranking, and identify where you may be losing potential customers.
+              </p>
+              <div class="node-deliverables">
+                <span class="node-tag">Website Audit</span>
+                <span class="node-tag">Competitor Check</span>
+                <span class="node-tag">Clear Roadmap</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 02 -->
+          <div class="timeline-node">
+            <div class="node-point">02</div>
+            <div class="node-body">
+              <span class="node-step-tag">Step 02 · Week 1–2</span>
+              <h3 class="node-heading">Plan &amp; Wireframe</h3>
+              <p class="node-summary">
+                I map out the page structure, write clear customer-focused text, and plan the target keywords before writing any code.
+              </p>
+              <div class="node-deliverables">
+                <span class="node-tag">Page Layouts</span>
+                <span class="node-tag">Content Outline</span>
+                <span class="node-tag">Keyword Plan</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 03 -->
+          <div class="timeline-node">
+            <div class="node-point">03</div>
+            <div class="node-body">
+              <span class="node-step-tag">Step 03 · Week 2–4</span>
+              <h3 class="node-heading">Build &amp; Test</h3>
+              <p class="node-summary">
+                I design and build the pages, optimize speed, test across phones and computers, and share regular preview links for your feedback.
+              </p>
+              <div class="node-deliverables">
+                <span class="node-tag">Clean Build</span>
+                <span class="node-tag">Mobile Responsive</span>
+                <span class="node-tag">Fast Speed</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 04 -->
+          <div class="timeline-node">
+            <div class="node-point">04</div>
+            <div class="node-body">
+              <span class="node-step-tag">Step 04 · Post-Launch</span>
+              <h3 class="node-heading">Launch &amp; Ongoing Growth</h3>
+              <p class="node-summary">
+                We launch smoothly, submit your site to Google for indexing, verify tracking, and keep improving performance through your monthly retainer.
+              </p>
+              <div class="node-deliverables">
+                <span class="node-tag">Smooth Go-Live</span>
+                <span class="node-tag">Google Indexing</span>
+                <span class="node-tag">Ongoing Support</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         FEATURED WORK (SLIDER LAYOUT - FIXED HEIGHT)
+         ======================================================================== -->
+    <section class="section" id="projects">
+      <div class="container">
+        <!-- Section Header matching reference layout: Accent bar, Title, Subtitle, Counter & Navigation -->
+        <div class="practice-header-row">
+          <div class="practice-header-text">
+            <div class="practice-accent-bar" aria-hidden="true"></div>
+            <span class="section-kicker" style="margin-bottom: 0.35rem; display: inline-block;">Recent Work</span>
+            <h2 class="practice-title">Selected Projects</h2>
+            <p class="practice-subtitle-lead">Real websites, custom platforms, and interactive digital tools built for clients.</p>
+          </div>
+          <div class="practice-header-controls">
+            <span class="practice-counter" id="practiceCounter" aria-live="polite">01 / 06</span>
+            <div class="practice-btn-group">
+              <button class="practice-nav-btn" id="prevPracticeBtn" aria-label="Previous project" title="Previous Project">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+              </button>
+              <button class="practice-nav-btn" id="nextPracticeBtn" aria-label="Next project" title="Next Project">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="practice-divider" aria-hidden="true"></div>
+
+        <!-- Fixed-Dimension Showcase Stage (Container height never fluctuates) -->
+        <div class="practice-stage" id="practiceStage">
+
+          <!-- Slide 01: Profilelinc -->
+          <article class="practice-card active" data-index="0" aria-label="Project 1 of 6: Profilelinc">
+            <div class="practice-info">
+              <div class="practice-meta-tag">CRM Platform · GoHighLevel</div>
+              <h3 class="practice-card-title">Profilelinc</h3>
+              <div class="practice-card-role">
+                <strong>Role:</strong> Web Development · CRM Workflows · Lead Automation
+              </div>
+              <p class="practice-card-desc">
+                Built an easy-to-use networking and CRM platform using GoHighLevel. Created automated contact follow-ups, lead pipelines, and a clean interface designed for busy professionals.
+              </p>
+              <ul class="practice-features-list">
+                <li class="practice-feature-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>GoHighLevel CRM Automation</span>
+                </li>
+                <li class="practice-feature-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Automated Pipeline Workflows</span>
+                </li>
+                <li class="practice-feature-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Fast Loading Speed</span>
+                </li>
+                <li class="practice-feature-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Clean Mobile &amp; Desktop UI</span>
+                </li>
+              </ul>
+              <div class="practice-card-actions">
+                <a href="https://profilelinc.com/" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
+                  <span>Visit Live Platform</span>
+                  <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="practice-preview">
+              <div class="practice-browser-bar" aria-hidden="true">
+                <div class="practice-browser-dots">
+                  <span class="dot-red"></span>
+                  <span class="dot-yellow"></span>
+                  <span class="dot-green"></span>
+                </div>
+                <div class="practice-url-bar">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                  <span>https://profilelinc.com</span>
+                </div>
+              </div>
+              <a href="https://profilelinc.com/" target="_blank" rel="noopener" class="practice-img-wrap" tabindex="-1" aria-label="Visit Profilelinc platform">
+                <img src="https://i.ibb.co/FqsrtqQs/Profilelinc.png" alt="Profilelinc CRM Platform Preview" loading="lazy" />
+                <span class="practice-live-chip">
+                  <span class="live-pulse"></span>
+                  <span>Live Platform</span>
+                </span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Slide 02: Voz d Victoria -->
+          <article class="practice-card" data-index="1" aria-label="Project 2 of 6: Voz d Victoria">
+            <div class="practice-info">
+              <div class="practice-meta-tag">Multilingual Website · WordPress</div>
+              <h3 class="practice-card-title">Voz d Victoria</h3>
+              <div class="practice-card-role">
+                <strong>Role:</strong> Web Design · Multilingual Setup · SEO
+              </div>
+              <p class="practice-card-desc">
+                Designed and built a clean, modern website for an international translation agency. Set up smooth language switching, optimized search tags, and an easy quote request form.
+              </p>
+              <ul class="practice-features-list">
+                <li class="practice-feature-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>WordPress Multilingual Setup</span>
+                </li>
+                <li class="practice-feature-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Google SEO &amp; Localized Tags</span>
+                </li>
+                <li class="practice-feature-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Instant Quote Request Form</span>
+                </li>
+                <li class="practice-feature-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Fast Loading Speed</span>
+                </li>
+              </ul>
+              <div class="practice-card-actions">
+                <a href="https://vozdvictoria.com/" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
+                  <span>Visit Live Website</span>
+                  <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="practice-preview">
+              <div class="practice-browser-bar" aria-hidden="true">
+                <div class="practice-browser-dots">
+                  <span class="dot-red"></span>
+                  <span class="dot-yellow"></span>
+                  <span class="dot-green"></span>
+                </div>
+                <div class="practice-url-bar">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                  <span>https://vozdvictoria.com</span>
+                </div>
+              </div>
+              <a href="https://vozdvictoria.com/" target="_blank" rel="noopener" class="practice-img-wrap" tabindex="-1" aria-label="Visit Voz d Victoria website">
+                <img src="https://i.ibb.co/JjfzQSjN/Vozd-Victoria.png" alt="Voz d Victoria Multilingual Website Preview" loading="lazy" />
+                <span class="practice-live-chip">
+                  <span class="live-pulse"></span>
+                  <span>Live Website</span>
+                </span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Slide 03: American Academy School Qatar -->
+          <article class="practice-card" data-index="2" aria-label="Project 3 of 6: American Academy School">
+            <div class="practice-info">
+              <div class="practice-meta-tag">School Website · Education</div>
+              <h3 class="practice-card-title">American Academy School</h3>
+              <div class="practice-card-role">
+                <strong>Role:</strong> Web Design · Admissions System · Mobile Optimization
+              </div>
+              <p class="practice-card-desc">
+                Designed and built a modern website for American Academy School in Qatar. Created clear admissions information, campus details, and easy communication portals for parents and students.
+              </p>
+              <ul class="practice-features-list">
+                <li class="practice-feature-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Online Student Admissions System</span>
+                </li>
+                <li class="practice-feature-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Campus Photo &amp; Media Gallery</span>
+                </li>
+                <li class="practice-feature-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Mobile-First Responsive Layout</span>
+                </li>
+                <li class="practice-feature-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Easy Parent &amp; Student Navigation</span>
+                </li>
+              </ul>
+              <div class="practice-card-actions">
+                <a href="https://www.americanacademy.sch.qa/" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
+                  <span>Visit Live Website</span>
+                  <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="practice-preview">
+              <div class="practice-browser-bar" aria-hidden="true">
+                <div class="practice-browser-dots">
+                  <span class="dot-red"></span>
+                  <span class="dot-yellow"></span>
+                  <span class="dot-green"></span>
+                </div>
+                <div class="practice-url-bar">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                  <span>https://www.americanacademy.sch.qa</span>
+                </div>
+              </div>
+              <a href="https://www.americanacademy.sch.qa/" target="_blank" rel="noopener" class="practice-img-wrap" tabindex="-1" aria-label="Visit American Academy School Qatar">
+                <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=1200&q=80" alt="American Academy School Qatar Campus and Portal" loading="lazy" />
+                <span class="practice-live-chip">
+                  <span class="live-pulse"></span>
+                  <span>Live Website</span>
+                </span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Slide 04: Reliable Thermal Solutions -->
+          <article class="practice-card" data-index="3" aria-label="Project 4 of 6: Reliable Thermal">
+            <div class="practice-info">
+              <div class="practice-meta-tag">Industrial Engineering · B2B</div>
+              <h3 class="practice-card-title">Reliable Thermal</h3>
+              <div class="practice-card-role">
+                <strong>Role:</strong> Web Development · Product Catalog · Lead Generation
+              </div>
+              <p class="practice-card-desc">
+                Built an industrial equipment website showcasing heating systems and steam boilers. Designed clean technical product pages and quick quote request forms for commercial buyers.
+              </p>
+              <ul class="practice-features-list">
+                <li class="practice-feature-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Heating Equipment &amp; Boiler Catalog</span>
+                </li>
+                <li class="practice-feature-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Direct Quote Request &amp; RFQ Forms</span>
+                </li>
+                <li class="practice-feature-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Clear Technical Specifications</span>
+                </li>
+                <li class="practice-feature-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Fast Contact &amp; Inquiry Options</span>
+                </li>
+              </ul>
+              <div class="practice-card-actions">
+                <a href="https://www.reliablethermal.com/" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
+                  <span>Visit Live Website</span>
+                  <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="practice-preview">
+              <div class="practice-browser-bar" aria-hidden="true">
+                <div class="practice-browser-dots">
+                  <span class="dot-red"></span>
+                  <span class="dot-yellow"></span>
+                  <span class="dot-green"></span>
+                </div>
+                <div class="practice-url-bar">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                  <span>https://www.reliablethermal.com</span>
+                </div>
+              </div>
+              <a href="https://www.reliablethermal.com/" target="_blank" rel="noopener" class="practice-img-wrap" tabindex="-1" aria-label="Visit Reliable Thermal Solutions">
+                <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80" alt="Reliable Thermal Solutions Industrial Engineering Platform" loading="lazy" />
+                <span class="practice-live-chip">
+                  <span class="live-pulse"></span>
+                  <span>Live Website</span>
+                </span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Slide 05: Sultan Chef -->
+          <article class="practice-card" data-index="4" aria-label="Project 5 of 6: Sultan Chef">
+            <div class="practice-info">
+              <div class="practice-meta-tag">Restaurant &amp; Hospitality · Dining</div>
+              <h3 class="practice-card-title">Sultan Chef</h3>
+              <div class="practice-card-role">
+                <strong>Role:</strong> Web Design · Digital Menu · Table Reservations
+              </div>
+              <p class="practice-card-desc">
+                Crafted an upscale website for Sultan Chef Turkish Steakhouse. Features an interactive menu, branch location guides, and easy online table reservation booking.
+              </p>
+              <ul class="practice-features-list">
+                <li class="practice-feature-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Interactive Food &amp; Steak Menu</span>
+                </li>
+                <li class="practice-feature-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Online Table Reservation System</span>
+                </li>
+                <li class="practice-feature-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Multi-Branch Location Maps</span>
+                </li>
+                <li class="practice-feature-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Luxury Visual Branding</span>
+                </li>
+              </ul>
+              <div class="practice-card-actions">
+                <a href="https://www.sultanchef.com/" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
+                  <span>Visit Live Website</span>
+                  <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="practice-preview">
+              <div class="practice-browser-bar" aria-hidden="true">
+                <div class="practice-browser-dots">
+                  <span class="dot-red"></span>
+                  <span class="dot-yellow"></span>
+                  <span class="dot-green"></span>
+                </div>
+                <div class="practice-url-bar">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                  <span>https://www.sultanchef.com</span>
+                </div>
+              </div>
+              <a href="https://www.sultanchef.com/" target="_blank" rel="noopener" class="practice-img-wrap" tabindex="-1" aria-label="Visit Sultan Chef Turkish Steakhouse">
+                <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80" alt="Sultan Chef Luxury Turkish Steakhouse Website" loading="lazy" />
+                <span class="practice-live-chip">
+                  <span class="live-pulse"></span>
+                  <span>Live Website</span>
+                </span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Slide 06: Interactive Presentation -->
+          <article class="practice-card" data-index="5" aria-label="Project 6 of 6: Interactive Presentation">
+            <div class="practice-info">
+              <div class="practice-meta-tag">Web Experience · Custom HTML &amp; JS</div>
+              <h3 class="practice-card-title">Interactive Business Presentation</h3>
+              <div class="practice-card-role">
+                <strong>Role:</strong> UI/UX Design · Front-End Code · Smooth Animations
+              </div>
+              <p class="practice-card-desc">
+                Created a modern, interactive web presentation to replace standard PowerPoint decks. Loads quickly in any browser across phones, tablets, and laptops for smooth client meetings.
+              </p>
+              <ul class="practice-features-list">
+                <li class="practice-feature-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Zero-Bloat Lightweight Code</span>
+                </li>
+                <li class="practice-feature-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Touch-Swipe &amp; Keyboard Controls</span>
+                </li>
+                <li class="practice-feature-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Interactive Charts &amp; Content Cards</span>
+                </li>
+                <li class="practice-feature-item">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Instant URL Sharing With Clients</span>
+                </li>
+              </ul>
+              <div class="practice-card-actions">
+                <a href="https://profilelinc.com/pfs-overview" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
+                  <span>Open Presentation Deck</span>
+                  <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="practice-preview">
+              <div class="practice-browser-bar" aria-hidden="true">
+                <div class="practice-browser-dots">
+                  <span class="dot-red"></span>
+                  <span class="dot-yellow"></span>
+                  <span class="dot-green"></span>
+                </div>
+                <div class="practice-url-bar">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                  <span>https://profilelinc.com/pfs-overview</span>
+                </div>
+              </div>
+              <a href="https://profilelinc.com/pfs-overview" target="_blank" rel="noopener" class="practice-img-wrap" tabindex="-1" aria-label="Open Interactive Business Presentation">
+                <img src="https://i.ibb.co/r2LTW5Gm/presentation.png" alt="Interactive HTML Business Presentation Preview" loading="lazy" />
+                <span class="practice-live-chip">
+                  <span class="live-pulse"></span>
+                  <span>Live App</span>
+                </span>
+              </a>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Project navigation pills below fixed stage -->
+        <div class="practice-tabs" id="practiceTabs" role="tablist" aria-label="Select Project">
+          <button class="practice-tab-pill active" data-index="0" role="tab" aria-selected="true">01. Profilelinc</button>
+          <button class="practice-tab-pill" data-index="1" role="tab" aria-selected="false">02. Voz d Victoria</button>
+          <button class="practice-tab-pill" data-index="2" role="tab" aria-selected="false">03. American Academy</button>
+          <button class="practice-tab-pill" data-index="3" role="tab" aria-selected="false">04. Reliable Thermal</button>
+          <button class="practice-tab-pill" data-index="4" role="tab" aria-selected="false">05. Sultan Chef</button>
+          <button class="practice-tab-pill" data-index="5" role="tab" aria-selected="false">06. Interactive Deck</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         ABOUT SECTION (ORGANIC SEAMLESS INTEGRATION - UNBOXED)
+         ======================================================================== -->
+    <section class="section" id="about" style="background: rgba(10, 14, 23, 0.4); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+      <div class="container">
+        <div class="about-split">
+          <div class="about-portrait-wrap">
+            <img src="https://i.ibb.co/YF09PgGg/1758804697286.jpg" alt="Mohammed Sohail Sayyed - Digital Marketing Consultant" class="about-portrait-img" loading="lazy" />
+          </div>
+
+          <div class="about-body-text">
+            <span class="section-kicker">About Me</span>
+            <h3>Hi, I'm Mohammed Sohail Sayyed.</h3>
+            
+            <p class="about-lead-p">
+              I am an independent digital marketing consultant based in Navi Mumbai, India, working with businesses worldwide.
+            </p>
+
+            <p class="about-lead-p">
+              I help business owners build modern, easy-to-use websites, rank higher on Google, and create consistent digital marketing that actually brings in clients. Instead of managing multiple freelancers or dealing with slow agency teams, you work directly with me from day one.
+            </p>
+
+            <div class="about-stats-row">
+              <div class="about-stat-item">
+                <strong>Navi Mumbai, IN</strong>
+                <span>Location</span>
+              </div>
+              <div class="about-stat-item">
+                <strong>Clients Worldwide</strong>
+                <span>Global Remote</span>
+              </div>
+              <div class="about-stat-item">
+                <strong>&lt; 24h</strong>
+                <span>Fast Reply Time</span>
+              </div>
+              <div class="about-stat-item">
+                <strong>1-on-1 Direct</strong>
+                <span>No Middlemen</span>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+              <a href="https://calendar.app.google/uzH9KFj874kFUX9L9" target="_blank" rel="noopener" class="btn btn-primary">
+                <span>Book a Free Call</span>
+                <span aria-hidden="true">→</span>
+              </a>
+              <a href="https://www.linkedin.com/in/mohammed-sohail-sayyed" target="_blank" rel="noopener" class="btn btn-outline">
+                <span>Connect on LinkedIn</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         CONTACT SECTION & CLOSING (NO GIANT FOOTER - CLEAN FINISH)
+         ======================================================================== -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-kicker">Get In Touch</span>
+          <h2 class="section-title">Let's Talk About Your Project</h2>
+          <p class="section-subtitle">
+            Whether you need a new website, better Google rankings, or reliable monthly marketing help, I'm ready to help.
+          </p>
+        </div>
+
+        <div class="contact-unified">
+          <!-- Left: Direct Info Column -->
+          <div class="contact-details-col">
+            <div>
+              <h4 style="font-family: var(--font-heading); font-size: 1.35rem; font-weight: 700; color: #fff; margin-bottom: 0.75rem;">Direct Contact</h4>
+              <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
+                I reply to all messages within 24 hours. If you'd like to talk directly, feel free to pick a time on my Google Calendar for a quick video or phone call.
+              </p>
+
+              <div class="contact-direct-links">
+                <a href="mailto:mdsohail6056@gmail.com" class="direct-link-card">
+                  <div class="direct-icon">✉️</div>
+                  <div class="direct-meta">
+                    <small>Email Me</small>
+                    <strong>mdsohail6056@gmail.com</strong>
+                  </div>
+                </a>
+
+                <a href="https://www.linkedin.com/in/mohammed-sohail-sayyed" target="_blank" rel="noopener" class="direct-link-card">
+                  <div class="direct-icon">💼</div>
+                  <div class="direct-meta">
+                    <small>LinkedIn</small>
+                    <strong>mohammed-sohail-sayyed</strong>
+                  </div>
+                </a>
+
+                <a href="https://calendar.app.google/uzH9KFj874kFUX9L9" target="_blank" rel="noopener" class="direct-link-card">
+                  <div class="direct-icon">📅</div>
+                  <div class="direct-meta">
+                    <small>Instant Booking</small>
+                    <strong>Book a 20-Min Call ↗</strong>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Interactive Contact Form -->
+          <div class="contact-form-inner">
+            <h4 style="font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem;">Send a Message</h4>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.75rem;">
+              Fill out this quick form and I will follow up with you within 24 hours.
+            </p>
+
+            <form id="projectContactForm" onsubmit="handleFormSubmit(event)">
+              <div class="form-row-2">
+                <div class="form-group">
+                  <label class="form-label" for="clientName">Your Name *</label>
+                  <input type="text" id="clientName" class="form-control" required placeholder="John Smith" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="clientEmail">Email Address *</label>
+                  <input type="email" id="clientEmail" class="form-control" required placeholder="john@example.com" />
+                </div>
+              </div>
+
+              <div class="form-row-2">
+                <div class="form-group">
+                  <label class="form-label" for="clientCompany">Company (Optional)</label>
+                  <input type="text" id="clientCompany" class="form-control" placeholder="Company or Brand" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="clientInterest">Service or Retainer *</label>
+                  <select id="clientInterest" class="form-control" required>
+                    <option value="2 Hours / Day ($239/mo)">Monthly Retainer: 2 Hours ($239/mo)</option>
+                    <option value="3 Hours / Day ($319/mo)" selected>Monthly Retainer: 3 Hours ($319/mo) — Popular</option>
+                    <option value="4 Hours / Day ($409/mo)">Monthly Retainer: 4 Hours ($409/mo)</option>
+                    <option value="Website Design & Development">Website Design &amp; Development</option>
+                    <option value="Search Engine Optimization (SEO)">Search Engine Optimization (SEO)</option>
+                    <option value="Graphic Design, Video & Content">Graphic Design, Video &amp; Content</option>
+                    <option value="Social Media Management">Social Media Management</option>
+                    <option value="Other Consultation">Other Consultation</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="clientMessage">Project Details *</label>
+                <textarea id="clientMessage" rows="4" class="form-control" required placeholder="Tell me a bit about your business, what you need help with, and your timeline..."></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%;" id="submitBtn">
+                <span>Send Message →</span>
+              </button>
+
+              <div id="formStatusMsg" class="form-status" role="alert"></div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Clean closing copyright line (footer removed as requested) -->
+        <div class="closing-bar">
+          <p>© <span id="currentYear"></span> Mohammed Sohail Sayyed. All rights reserved.</p>
+          <p>Navi Mumbai, India · Remote Global Work</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Back to top floating button -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <!-- ========================================================================
+       JAVASCRIPT
+       ======================================================================== -->
+  <script>
+    // Set dynamic current year
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+    // Scroll Progress Bar & Back to top button visibility
+    const scrollProgress = document.getElementById('scrollProgress');
+    const backToTopBtn = document.getElementById('backToTop');
+    const siteHeader = document.getElementById('siteHeader');
+
+    window.addEventListener('scroll', () => {
+      const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+      if (scrollProgress) scrollProgress.style.width = scrolled + '%';
+
+      if (winScroll > 400) {
+        backToTopBtn.classList.add('visible');
+      } else {
+        backToTopBtn.classList.remove('visible');
+      }
+
+      if (winScroll > 40) {
+        siteHeader.style.background = 'rgba(6, 8, 13, 0.92)';
+      } else {
+        siteHeader.style.background = 'rgba(6, 8, 13, 0.75)';
+      }
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Mobile Navigation Drawer Toggle
+    const mobileToggle = document.getElementById('mobileToggle');
+    const mobileDrawer = document.getElementById('mobileDrawer');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    if (mobileToggle && mobileDrawer) {
+      mobileToggle.addEventListener('click', () => {
+        const isOpen = mobileDrawer.classList.toggle('open');
+        mobileToggle.classList.toggle('open');
+        mobileToggle.setAttribute('aria-expanded', isOpen);
+      });
+
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileDrawer.classList.remove('open');
+          mobileToggle.classList.remove('open');
+          mobileToggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+
+    // Video Control (Pause / Play toggle for user accessibility)
+    const heroVideo = document.getElementById('heroVideo');
+    const videoControlBtn = document.getElementById('videoControlBtn');
+    const videoControlIcon = document.getElementById('videoControlIcon');
+    const videoControlText = document.getElementById('videoControlText');
+
+    if (heroVideo && videoControlBtn) {
+      videoControlBtn.addEventListener('click', () => {
+        if (heroVideo.paused) {
+          heroVideo.play().then(() => {
+            videoControlIcon.textContent = '⏸';
+            videoControlText.textContent = 'Pause Video';
+          }).catch(e => console.log('Autoplay prevented', e));
+        } else {
+          heroVideo.pause();
+          videoControlIcon.textContent = '▶';
+          videoControlText.textContent = 'Play Video';
+        }
+      });
+    }
+
+    // Ambient Constellation Canvas Fallback / Layer
+    const canvas = document.getElementById('heroCanvas');
+    if (canvas) {
+      const ctx = canvas.getContext('2d');
+      let particles = [];
+      let animationFrameId;
+
+      function resizeCanvas() {
+        if (!canvas.parentElement) return;
+        canvas.width = canvas.parentElement.clientWidth;
+        canvas.height = canvas.parentElement.clientHeight;
+        initParticles();
+      }
+
+      function initParticles() {
+        particles = [];
+        const count = Math.min(Math.floor((canvas.width * canvas.height) / 18000), 55);
+        for (let i = 0; i < count; i++) {
+          particles.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            vx: (Math.random() - 0.5) * 0.4,
+            vy: (Math.random() - 0.5) * 0.4,
+            radius: Math.random() * 1.5 + 0.8,
+            color: Math.random() > 0.4 ? 'rgba(56, 189, 248, 0.4)' : 'rgba(99, 102, 241, 0.35)'
+          });
+        }
+      }
+
+      function renderCanvas() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // Draw connections
+        for (let i = 0; i < particles.length; i++) {
+          for (let j = i + 1; j < particles.length; j++) {
+            const dx = particles[i].x - particles[j].x;
+            const dy = particles[i].y - particles[j].y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+
+            if (dist < 120) {
+              const alpha = (1 - dist / 120) * 0.18;
+              ctx.strokeStyle = `rgba(56, 189, 248, ${alpha})`;
+              ctx.lineWidth = 0.8;
+              ctx.beginPath();
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.stroke();
+            }
+          }
+        }
+
+        // Draw particles
+        for (let i = 0; i < particles.length; i++) {
+          const p = particles[i];
+          p.x += p.vx;
+          p.y += p.vy;
+
+          if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+          if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+          ctx.fillStyle = p.color;
+          ctx.fill();
+        }
+
+        animationFrameId = requestAnimationFrame(renderCanvas);
+      }
+
+      window.addEventListener('resize', resizeCanvas);
+      resizeCanvas();
+      renderCanvas();
+    }
+
+    // Quick select from 2x2 Services into Contact Form
+    function quickSelectService(serviceName) {
+      const selectElement = document.getElementById('clientInterest');
+      const contactSection = document.getElementById('contact');
+      if (selectElement) {
+        selectElement.value = serviceName;
+      }
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth' });
+        const messageBox = document.getElementById('clientMessage');
+        if (messageBox) {
+          messageBox.placeholder = `I am interested in exploring ${serviceName}. Here is an overview of our goals and timeline:`;
+          messageBox.focus();
+        }
+      }
+    }
+
+    // Select Monthly Retainer
+    function selectRetainer(retainerName) {
+      const selectElement = document.getElementById('clientInterest');
+      const contactSection = document.getElementById('contact');
+      if (selectElement) {
+        selectElement.value = retainerName;
+      }
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth' });
+        const messageBox = document.getElementById('clientMessage');
+        if (messageBox) {
+          messageBox.placeholder = `I am interested in getting started with the ${retainerName} retainer. Let's discuss immediate priorities.`;
+          messageBox.focus();
+        }
+      }
+    }
+
+    // Interactive Form Submission Handler with mailto fallback
+    function handleFormSubmit(event) {
+      event.preventDefault();
+      const name = document.getElementById('clientName').value.trim();
+      const email = document.getElementById('clientEmail').value.trim();
+      const company = document.getElementById('clientCompany').value.trim();
+      const interest = document.getElementById('clientInterest').value;
+      const message = document.getElementById('clientMessage').value.trim();
+      const statusMsg = document.getElementById('formStatusMsg');
+      const submitBtn = document.getElementById('submitBtn');
+
+      if (!name || !email || !message) {
+        statusMsg.className = 'form-status error';
+        statusMsg.textContent = 'Please fill out all required fields marked with an asterisk (*).';
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<span>Processing Inquiry...</span>';
+
+      setTimeout(() => {
+        statusMsg.className = 'form-status success';
+        statusMsg.innerHTML = `
+          <strong>Thank you, ${name}!</strong> Your inquiry has been received. I will review your project details and respond via email (<strong>${email}</strong>) within 24 hours.
+          <br><br>
+          <a href="mailto:mdsohail6056@gmail.com?subject=New%20Inquiry%20from%20${encodeURIComponent(name)}%20-%20${encodeURIComponent(interest)}&body=${encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\nCompany: ' + company + '\nInterest: ' + interest + '\n\nMessage:\n' + message)}" style="text-decoration: underline; font-weight: 600; color: #fff;">
+            Click here to open directly in your email client if preferred →
+          </a>
+        `;
+
+        document.getElementById('projectContactForm').reset();
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<span>Inquiry Sent ✓</span>';
+      }, 700);
+    }
+
+    // ==========================================================================
+    // APPLICATION DEVELOPMENT IN PRACTICE (SLIDER LOGIC)
+    // ==========================================================================
+    (function initPracticeSlider() {
+      const stage = document.getElementById('practiceStage');
+      if (!stage) return;
+
+      const cards = stage.querySelectorAll('.practice-card');
+      const counter = document.getElementById('practiceCounter');
+      const prevBtn = document.getElementById('prevPracticeBtn');
+      const nextBtn = document.getElementById('nextPracticeBtn');
+      const tabPills = document.querySelectorAll('.practice-tab-pill');
+      const totalSlides = cards.length;
+      let currentIndex = 0;
+
+      function goToSlide(index) {
+        if (index < 0) {
+          currentIndex = totalSlides - 1;
+        } else if (index >= totalSlides) {
+          currentIndex = 0;
+        } else {
+          currentIndex = index;
+        }
+
+        // Update cards
+        cards.forEach((card, i) => {
+          if (i === currentIndex) {
+            card.classList.add('active');
+            card.setAttribute('aria-hidden', 'false');
+          } else {
+            card.classList.remove('active');
+            card.setAttribute('aria-hidden', 'true');
+          }
+        });
+
+        // Update Counter
+        if (counter) {
+          const displayIdx = String(currentIndex + 1).padStart(2, '0');
+          const displayTotal = String(totalSlides).padStart(2, '0');
+          counter.textContent = `${displayIdx} / ${displayTotal}`;
+        }
+
+        // Update Tab Pills
+        tabPills.forEach((pill, i) => {
+          if (i === currentIndex) {
+            pill.classList.add('active');
+            pill.setAttribute('aria-selected', 'true');
+            // Ensure visible in horizontally scrollable container on mobile
+            pill.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+          } else {
+            pill.classList.remove('active');
+            pill.setAttribute('aria-selected', 'false');
+          }
+        });
+      }
+
+      if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+          goToSlide(currentIndex - 1);
+        });
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+          goToSlide(currentIndex + 1);
+        });
+      }
+
+      tabPills.forEach((pill, i) => {
+        pill.addEventListener('click', () => {
+          goToSlide(i);
+        });
+      });
+
+      // Keyboard navigation when user is near the section
+      document.addEventListener('keydown', (e) => {
+        const rect = stage.getBoundingClientRect();
+        const isInViewport = rect.top < window.innerHeight && rect.bottom > 0;
+        if (!isInViewport) return;
+
+        if (e.key === 'ArrowLeft') {
+          goToSlide(currentIndex - 1);
+        } else if (e.key === 'ArrowRight') {
+          goToSlide(currentIndex + 1);
+        }
+      });
+
+      // Touch Swipe Support
+      let touchStartX = 0;
+      let touchEndX = 0;
+
+      stage.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+      }, { passive: true });
+
+      stage.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        const diffX = touchEndX - touchStartX;
+        if (Math.abs(diffX) > 45) {
+          if (diffX < 0) {
+            goToSlide(currentIndex + 1);
+          } else {
+            goToSlide(currentIndex - 1);
+          }
+        }
+      }, { passive: true });
+
+      // Initialize
+      goToSlide(0);
+    })();
+
+    // Active Section Tracking for Nav Highlighting
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    window.addEventListener('scroll', () => {
+      let currentSection = '';
+      const scrollY = window.pageYOffset;
+
+      sections.forEach(section => {
+        const sectionHeight = section.offsetHeight;
+        const sectionTop = section.offsetTop - 120;
+        const sectionId = section.getAttribute('id');
+
+        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+          currentSection = sectionId;
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${currentSection}`) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
